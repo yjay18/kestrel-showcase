@@ -13,7 +13,6 @@ import {ImageProcessingConfiguration} from '@babylonjs/core/Materials/imageProce
 import {tourPose} from './tour.js';
 import {CubeTexture} from '@babylonjs/core/Materials/Textures/cubeTexture';
 import '@babylonjs/loaders/glTF/2.0/glTFLoader';
-import '@babylonjs/loaders/glTF/2.0/Extensions/EXT_texture_webp';
 import '@babylonjs/loaders/glTF/2.0/Extensions/EXT_meshopt_compression';
 import '@babylonjs/loaders/glTF/2.0/Extensions/KHR_mesh_quantization';
 import {MeshoptCompression} from '@babylonjs/core/Meshes/Compression/meshoptCompression';
@@ -42,7 +41,7 @@ export async function createScene({canvas,asset,gsap,ScrollTrigger,isPaused,isRe
   const ring=MeshBuilder.CreateTorus('landing-inlay',{diameter:3.5,thickness:.009,tessellation:128},scene);ring.position.y=-.014;ring.material=ringMaterial;
   let imported=[];
   try {
-    const result=await SceneLoader.ImportMeshAsync('',asset('models/'),'kestrel.glb',scene);
+    const result=await SceneLoader.ImportMeshAsync('',asset('models/'),'kestrel.glb?texture=4k-original',scene,event=>document.dispatchEvent(new CustomEvent('kestrel-model-progress',{detail:{loaded:event.loaded,total:event.lengthComputable?event.total:0}})),'.glb');
     imported=result.meshes;
     const root=imported[0];root.computeWorldMatrix(true);
     const bounds=root.getHierarchyBoundingVectors(true),size=bounds.max.subtract(bounds.min),centre=bounds.max.add(bounds.min).scale(.5);
@@ -54,13 +53,22 @@ export async function createScene({canvas,asset,gsap,ScrollTrigger,isPaused,isRe
       if (mesh.material) mesh.material.backFaceCulling=false;
       mesh.isPickable=false;
     }
-    document.body.classList.add('model-ready');
   } catch (error) {
     document.querySelector('#model-status').textContent='The 3D model could not load. Try the original animation playground below.';
-    platform.setEnabled(false);ring.setEnabled(false);
+    platform.setEnabled(false);ring.setEnabled(false);document.dispatchEvent(new Event('kestrel-model-error'));
   }
   const mobile=()=>innerWidth<768;
   let progress=0,destination=0,freeOrbit=false;
+  const look={x:0,y:0,targetX:0,targetY:0};
+  window.addEventListener('pointermove',event=>{
+    if(event.isPrimary===false)return;
+    look.targetX=Math.max(-1,Math.min(1,event.clientX/innerWidth*2-1));
+    look.targetY=Math.max(-1,Math.min(1,event.clientY/innerHeight*2-1));
+  },{passive:true});
+  const resetLook=()=>{look.targetX=0;look.targetY=0;};
+  window.addEventListener('pointerout',event=>{if(!event.relatedTarget)resetLook();});
+  window.addEventListener('pointerup',event=>{if(event.pointerType!=='mouse')resetLook();});
+  window.addEventListener('pointercancel',resetLook);window.addEventListener('blur',resetLook);
   const timeline=ScrollTrigger.create({trigger:'#story',start:'top top',end:'bottom bottom',onUpdate:self=>{destination=self.progress;},invalidateOnRefresh:true});
   destination=timeline.progress;progress=destination;
   const stage=document.querySelector('#stage');
@@ -76,7 +84,9 @@ export async function createScene({canvas,asset,gsap,ScrollTrigger,isPaused,isRe
     // One continuous path; feature sections never restart or stop the camera.
     // Motion preferences remove smoothing and idle movement, retaining scroll navigation.
     const pose=tourPose(progress,mobile());
-    camera.alpha=pose.alpha;camera.beta=pose.beta;camera.radius=pose.radius;
+    // Small live look-around offsets preserve the close framing and delayed reveal.
+    const motion=isPaused()||isReduced()?0:1;
+    camera.alpha=pose.alpha+look.x*.085*motion;camera.beta=pose.beta+look.y*.045*motion;camera.radius=pose.radius;
     camera.setTarget(Vector3.FromArray(pose.target),false,false,true);
     platform.visibility=pose.reveal;ring.visibility=pose.reveal;
   }
@@ -97,11 +107,14 @@ export async function createScene({canvas,asset,gsap,ScrollTrigger,isPaused,isRe
   engine.runRenderLoop(()=>{
     const now=performance.now(),delta=Math.min(100,now-lastFrame);lastFrame=now;
     progress+=(destination-progress)*(isPaused()||isReduced()?1:1-Math.exp(-delta/160));
-    if (document.hidden) return;
+    const follow=1-Math.exp(-delta/180);
+    look.x+=(look.targetX-look.x)*follow;look.y+=(look.targetY-look.y)*follow;
+    if (document.hidden || (!freeOrbit && stage.style.opacity==='0')) return;
     updateCamera();
     // Keep the subject fixed: scrolling alone controls the fly-through.
     scene.render();
   });
+  if(imported.length)scene.executeWhenReady(()=>{updateCamera();scene.render();document.body.classList.add('model-ready');document.dispatchEvent(new Event('kestrel-model-ready'));});
   window.addEventListener('resize',()=>{engine.resize();ScrollTrigger.refresh();});
   window.addEventListener('pagehide',()=>{timeline.kill();engine.dispose();},{once:true});
 }

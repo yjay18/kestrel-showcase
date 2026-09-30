@@ -1,0 +1,2552 @@
+{
+  "assets": {
+    "hover": {
+      "canvas": {
+        "height": 380,
+        "pivot": [
+          190,
+          340
+        ],
+        "width": 380
+      },
+      "commonCanvasOffset": [
+        0,
+        0
+      ],
+      "registrationAnchor": [
+        190,
+        205
+      ],
+      "playbackRate": 0.55,
+      "loop": true,
+      "frames": [
+        {
+          "duration": 180,
+          "frame": {
+            "h": 380,
+            "w": 380,
+            "x": 0,
+            "y": 0
+          },
+          "sourceSize": {
+            "h": 380,
+            "w": 380
+          }
+        },
+        {
+          "duration": 180,
+          "frame": {
+            "h": 380,
+            "w": 380,
+            "x": 380,
+            "y": 0
+          },
+          "sourceSize": {
+            "h": 380,
+            "w": 380
+          }
+        },
+        {
+          "duration": 180,
+          "frame": {
+            "h": 380,
+            "w": 380,
+            "x": 760,
+            "y": 0
+          },
+          "sourceSize": {
+            "h": 380,
+            "w": 380
+          }
+        },
+        {
+          "duration": 180,
+          "frame": {
+            "h": 380,
+            "w": 380,
+            "x": 1140,
+            "y": 0
+          },
+          "sourceSize": {
+            "h": 380,
+            "w": 380
+          }
+        },
+        {
+          "duration": 180,
+          "frame": {
+            "h": 380,
+            "w": 380,
+            "x": 1520,
+            "y": 0
+          },
+          "sourceSize": {
+            "h": 380,
+            "w": 380
+          }
+        },
+        {
+          "duration": 180,
+          "frame": {
+            "h": 380,
+            "w": 380,
+            "x": 1900,
+            "y": 0
+          },
+          "sourceSize": {
+            "h": 380,
+            "w": 380
+          }
+        }
+      ],
+      "image": "hover.png",
+      "source": "art/kestrel/palette-pack-v1/red/hover-composite.png",
+      "sha256": "85923b769b606b0316e849b702ab457ab39b83cd6cd1f1d4f8e4a368f3ee9caf"
+    },
+    "hover-attack": {
+      "canvas": {
+        "width": 380,
+        "height": 380,
+        "pivot": [
+          190,
+          340
+        ]
+      },
+      "playbackRate": 1.0,
+      "loop": false,
+      "frames": [
+        {
+          "duration": 260,
+          "frame": {
+            "h": 380,
+            "w": 380,
+            "x": 0,
+            "y": 0
+          },
+          "sourceSize": {
+            "h": 380,
+            "w": 380
+          }
+        },
+        {
+          "duration": 280,
+          "frame": {
+            "h": 380,
+            "w": 380,
+            "x": 380,
+            "y": 0
+          },
+          "sourceSize": {
+            "h": 380,
+            "w": 380
+          }
+        },
+        {
+          "duration": 75,
+          "frame": {
+            "h": 380,
+            "w": 380,
+            "x": 760,
+            "y": 0
+          },
+          "sourceSize": {
+            "h": 380,
+            "w": 380
+          }
+        },
+        {
+          "duration": 395,
+          "frame": {
+            "h": 380,
+            "w": 380,
+            "x": 1140,
+            "y": 0
+          },
+          "sourceSize": {
+            "h": 380,
+            "w": 380
+          }
+        },
+        {
+          "duration": 160,
+          "frame": {
+            "h": 380,
+            "w": 380,
+            "x": 1520,
+            "y": 0
+          },
+          "sourceSize": {
+            "h": 380,
+            "w": 380
+          }
+        },
+        {
+          "duration": 130,
+          "frame": {
+            "h": 380,
+            "w": 380,
+            "x": 1900,
+            "y": 0
+          },
+          "sourceSize": {
+            "h": 380,
+            "w": 380
+          }
+        }
+      ],
+      "commonCanvasOffset": [
+        0,
+        0
+      ],
+      "registrationAnchor": [
+        190,
+        340
+      ],
+      "interruption": "May yield to grab or fall; runtime wiring is a separate slice.",
+      "bodyAnchors": [
+        [
+          254,
+          120
+        ],
+        [
+          254,
+          135
+        ],
+        [
+          240,
+          130
+        ],
+        [
+          260,
+          108
+        ],
+        [
+          257,
+          124
+        ],
+        [
+          260,
+          122
+        ]
+      ],
+      "releaseMs": 540,
+      "image": "hover-attack.png",
+      "source": "art/kestrel/palette-pack-v1/stage/red/hover-attack.png",
+      "sha256": "258b1b5d47ee45667b83c490088794277742c7c3a1b700d4d471d12d63b3f545"
+    },
+    "fish-wait": {
+      "canvas": {
+        "width": 380,
+        "height": 380,
+        "pivot": [
+          200,
+          340
+        ]
+      },
+      "playbackRate": 1.0,
+      "loop": true,
+      "frames": [
+        {
+          "duration": 4000,
+          "frame": {
+            "h": 380,
+            "w": 380,
+            "x": 0,
+            "y": 0
+          },
+          "sourceSize": {
+            "h": 380,
+            "w": 380
+          }
+        },
+        {
+          "duration": 350,
+          "frame": {
+            "h": 380,
+            "w": 380,
+            "x": 380,
+            "y": 0
+          },
+          "sourceSize": {
+            "h": 380,
+            "w": 380
+          }
+        },
+        {
+          "duration": 350,
+          "frame": {
+            "h": 380,
+            "w": 380,
+            "x": 760,
+            "y": 0
+          },
+          "sourceSize": {
+            "h": 380,
+            "w": 380
+          }
+        },
+        {
+          "duration": 2000,
+          "frame": {
+            "h": 380,
+            "w": 380,
+            "x": 1140,
+            "y": 0
+          },
+          "sourceSize": {
+            "h": 380,
+            "w": 380
+          }
+        },
+        {
+          "duration": 350,
+          "frame": {
+            "h": 380,
+            "w": 380,
+            "x": 1520,
+            "y": 0
+          },
+          "sourceSize": {
+            "h": 380,
+            "w": 380
+          }
+        },
+        {
+          "duration": 950,
+          "frame": {
+            "h": 380,
+            "w": 380,
+            "x": 1900,
+            "y": 0
+          },
+          "sourceSize": {
+            "h": 380,
+            "w": 380
+          }
+        }
+      ],
+      "commonCanvasOffset": [
+        0,
+        0
+      ],
+      "registrationAnchor": [
+        200,
+        340
+      ],
+      "interruption": "May yield to grab/fall or scene cancellation. Separate runtime wiring required.",
+      "seatAnchor": [
+        175,
+        220
+      ],
+      "supportAnchors": [
+        [
+          175,
+          220
+        ],
+        [
+          175,
+          220
+        ],
+        [
+          175,
+          220
+        ],
+        [
+          175,
+          220
+        ],
+        [
+          175,
+          220
+        ],
+        [
+          175,
+          220
+        ]
+      ],
+      "rodTipAnchors": [
+        [
+          354,
+          223
+        ],
+        [
+          354,
+          223
+        ],
+        [
+          354,
+          233
+        ],
+        [
+          354,
+          223
+        ],
+        [
+          355,
+          217
+        ],
+        [
+          354,
+          223
+        ]
+      ],
+      "image": "fish-wait.png",
+      "source": "art/kestrel/palette-pack-v1/breaks/red/fish-wait.png",
+      "sha256": "02414e1c06f70785dc92d26c0f55caf9c8d1543a2f2cb9dca10416f95ee57545"
+    },
+    "dragon-hover": {
+      "canvas": {
+        "width": 640,
+        "height": 720
+      },
+      "bodyRegistrationAnchor": [
+        320,
+        300
+      ],
+      "playbackRate": 1.0,
+      "loop": true,
+      "endBehavior": "loop",
+      "frames": [
+        {
+          "duration": 900,
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 640,
+            "h": 720
+          },
+          "sourceSize": {
+            "w": 640,
+            "h": 720
+          },
+          "bodyRegistrationAnchor": [
+            320,
+            300
+          ],
+          "hitPoint": [
+            285,
+            235
+          ],
+          "hitRadius": 34
+        },
+        {
+          "duration": 180,
+          "frame": {
+            "x": 640,
+            "y": 0,
+            "w": 640,
+            "h": 720
+          },
+          "sourceSize": {
+            "w": 640,
+            "h": 720
+          },
+          "bodyRegistrationAnchor": [
+            320,
+            300
+          ],
+          "hitPoint": [
+            285,
+            235
+          ],
+          "hitRadius": 34
+        },
+        {
+          "duration": 180,
+          "frame": {
+            "x": 1280,
+            "y": 0,
+            "w": 640,
+            "h": 720
+          },
+          "sourceSize": {
+            "w": 640,
+            "h": 720
+          },
+          "bodyRegistrationAnchor": [
+            320,
+            300
+          ],
+          "hitPoint": [
+            285,
+            235
+          ],
+          "hitRadius": 34
+        },
+        {
+          "duration": 180,
+          "frame": {
+            "x": 1920,
+            "y": 0,
+            "w": 640,
+            "h": 720
+          },
+          "sourceSize": {
+            "w": 640,
+            "h": 720
+          },
+          "bodyRegistrationAnchor": [
+            320,
+            300
+          ],
+          "hitPoint": [
+            285,
+            235
+          ],
+          "hitRadius": 34
+        },
+        {
+          "duration": 220,
+          "frame": {
+            "x": 2560,
+            "y": 0,
+            "w": 640,
+            "h": 720
+          },
+          "sourceSize": {
+            "w": 640,
+            "h": 720
+          },
+          "bodyRegistrationAnchor": [
+            320,
+            300
+          ],
+          "hitPoint": [
+            285,
+            235
+          ],
+          "hitRadius": 34
+        },
+        {
+          "duration": 1540,
+          "frame": {
+            "x": 3200,
+            "y": 0,
+            "w": 640,
+            "h": 720
+          },
+          "sourceSize": {
+            "w": 640,
+            "h": 720
+          },
+          "bodyRegistrationAnchor": [
+            320,
+            300
+          ],
+          "hitPoint": [
+            285,
+            235
+          ],
+          "hitRadius": 34
+        }
+      ],
+      "image": "dragon-hover.png",
+      "source": "art/dragon/ashen-serpent-pack-v1/body/dragon-hover.png",
+      "sha256": "4084a7ef74cfc6c6ba78f7f033196cdaca71bf71d822fcd199b400872608105f"
+    },
+    "dragon-arrive": {
+      "canvas": {
+        "width": 640,
+        "height": 720
+      },
+      "bodyRegistrationAnchor": [
+        320,
+        300
+      ],
+      "playbackRate": 1.0,
+      "loop": false,
+      "endBehavior": "hold-last-frame",
+      "frames": [
+        {
+          "duration": 160,
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 640,
+            "h": 720
+          },
+          "sourceSize": {
+            "w": 640,
+            "h": 720
+          },
+          "bodyRegistrationAnchor": [
+            320,
+            300
+          ],
+          "hitPoint": [
+            285,
+            235
+          ],
+          "hitRadius": 34
+        },
+        {
+          "duration": 180,
+          "frame": {
+            "x": 640,
+            "y": 0,
+            "w": 640,
+            "h": 720
+          },
+          "sourceSize": {
+            "w": 640,
+            "h": 720
+          },
+          "bodyRegistrationAnchor": [
+            320,
+            300
+          ],
+          "hitPoint": [
+            285,
+            235
+          ],
+          "hitRadius": 34
+        },
+        {
+          "duration": 220,
+          "frame": {
+            "x": 1280,
+            "y": 0,
+            "w": 640,
+            "h": 720
+          },
+          "sourceSize": {
+            "w": 640,
+            "h": 720
+          },
+          "bodyRegistrationAnchor": [
+            320,
+            300
+          ],
+          "hitPoint": [
+            285,
+            235
+          ],
+          "hitRadius": 34
+        },
+        {
+          "duration": 240,
+          "frame": {
+            "x": 1920,
+            "y": 0,
+            "w": 640,
+            "h": 720
+          },
+          "sourceSize": {
+            "w": 640,
+            "h": 720
+          },
+          "bodyRegistrationAnchor": [
+            320,
+            300
+          ],
+          "hitPoint": [
+            285,
+            235
+          ],
+          "hitRadius": 34
+        },
+        {
+          "duration": 220,
+          "frame": {
+            "x": 2560,
+            "y": 0,
+            "w": 640,
+            "h": 720
+          },
+          "sourceSize": {
+            "w": 640,
+            "h": 720
+          },
+          "bodyRegistrationAnchor": [
+            320,
+            300
+          ],
+          "hitPoint": [
+            285,
+            235
+          ],
+          "hitRadius": 34
+        },
+        {
+          "duration": 180,
+          "frame": {
+            "x": 3200,
+            "y": 0,
+            "w": 640,
+            "h": 720
+          },
+          "sourceSize": {
+            "w": 640,
+            "h": 720
+          },
+          "bodyRegistrationAnchor": [
+            320,
+            300
+          ],
+          "hitPoint": [
+            285,
+            235
+          ],
+          "hitRadius": 34
+        }
+      ],
+      "image": "dragon-arrive.png",
+      "source": "art/dragon/ashen-serpent-pack-v1/body/dragon-arrive.png",
+      "sha256": "d7f426543db309c1464826a0ca59c7f1651fd14dd88f3299fa0147fb26ca913e"
+    },
+    "dragon-challenge": {
+      "canvas": {
+        "width": 640,
+        "height": 720
+      },
+      "bodyRegistrationAnchor": [
+        320,
+        300
+      ],
+      "playbackRate": 1.0,
+      "loop": false,
+      "endBehavior": "hold-last-frame",
+      "frames": [
+        {
+          "duration": 140,
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 640,
+            "h": 720
+          },
+          "sourceSize": {
+            "w": 640,
+            "h": 720
+          },
+          "bodyRegistrationAnchor": [
+            320,
+            300
+          ],
+          "hitPoint": [
+            285,
+            235
+          ],
+          "hitRadius": 34
+        },
+        {
+          "duration": 140,
+          "frame": {
+            "x": 640,
+            "y": 0,
+            "w": 640,
+            "h": 720
+          },
+          "sourceSize": {
+            "w": 640,
+            "h": 720
+          },
+          "bodyRegistrationAnchor": [
+            320,
+            300
+          ],
+          "hitPoint": [
+            285,
+            235
+          ],
+          "hitRadius": 34
+        },
+        {
+          "duration": 160,
+          "frame": {
+            "x": 1280,
+            "y": 0,
+            "w": 640,
+            "h": 720
+          },
+          "sourceSize": {
+            "w": 640,
+            "h": 720
+          },
+          "bodyRegistrationAnchor": [
+            320,
+            300
+          ],
+          "hitPoint": [
+            285,
+            235
+          ],
+          "hitRadius": 34
+        },
+        {
+          "duration": 160,
+          "frame": {
+            "x": 1920,
+            "y": 0,
+            "w": 640,
+            "h": 720
+          },
+          "sourceSize": {
+            "w": 640,
+            "h": 720
+          },
+          "bodyRegistrationAnchor": [
+            320,
+            300
+          ],
+          "hitPoint": [
+            285,
+            235
+          ],
+          "hitRadius": 34
+        },
+        {
+          "duration": 140,
+          "frame": {
+            "x": 2560,
+            "y": 0,
+            "w": 640,
+            "h": 720
+          },
+          "sourceSize": {
+            "w": 640,
+            "h": 720
+          },
+          "bodyRegistrationAnchor": [
+            320,
+            300
+          ],
+          "hitPoint": [
+            285,
+            235
+          ],
+          "hitRadius": 34
+        },
+        {
+          "duration": 160,
+          "frame": {
+            "x": 3200,
+            "y": 0,
+            "w": 640,
+            "h": 720
+          },
+          "sourceSize": {
+            "w": 640,
+            "h": 720
+          },
+          "bodyRegistrationAnchor": [
+            320,
+            300
+          ],
+          "hitPoint": [
+            285,
+            235
+          ],
+          "hitRadius": 34
+        }
+      ],
+      "image": "dragon-challenge.png",
+      "source": "art/dragon/ashen-serpent-pack-v1/body/dragon-challenge.png",
+      "sha256": "9f09e2c7ee51619029abe8716f7084115e4adfe6f936a76714251d5dfb428e04"
+    },
+    "dragon-fire": {
+      "canvas": {
+        "width": 640,
+        "height": 720
+      },
+      "bodyRegistrationAnchor": [
+        320,
+        300
+      ],
+      "playbackRate": 1.0,
+      "loop": false,
+      "endBehavior": "hold-last-frame",
+      "frames": [
+        {
+          "duration": 160,
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 640,
+            "h": 720
+          },
+          "sourceSize": {
+            "w": 640,
+            "h": 720
+          },
+          "bodyRegistrationAnchor": [
+            320,
+            300
+          ],
+          "hitPoint": [
+            285,
+            235
+          ],
+          "hitRadius": 34,
+          "mouthAnchor": [
+            162,
+            145
+          ],
+          "mouthDirection": [
+            -1,
+            0
+          ]
+        },
+        {
+          "duration": 140,
+          "frame": {
+            "x": 640,
+            "y": 0,
+            "w": 640,
+            "h": 720
+          },
+          "sourceSize": {
+            "w": 640,
+            "h": 720
+          },
+          "bodyRegistrationAnchor": [
+            320,
+            300
+          ],
+          "hitPoint": [
+            285,
+            235
+          ],
+          "hitRadius": 34,
+          "mouthAnchor": [
+            184,
+            114
+          ],
+          "mouthDirection": [
+            -1,
+            0
+          ]
+        },
+        {
+          "duration": 60,
+          "frame": {
+            "x": 1280,
+            "y": 0,
+            "w": 640,
+            "h": 720
+          },
+          "sourceSize": {
+            "w": 640,
+            "h": 720
+          },
+          "bodyRegistrationAnchor": [
+            320,
+            300
+          ],
+          "hitPoint": [
+            285,
+            235
+          ],
+          "hitRadius": 34,
+          "mouthAnchor": [
+            154,
+            177
+          ],
+          "mouthDirection": [
+            -1,
+            0
+          ]
+        },
+        {
+          "duration": 180,
+          "frame": {
+            "x": 1920,
+            "y": 0,
+            "w": 640,
+            "h": 720
+          },
+          "sourceSize": {
+            "w": 640,
+            "h": 720
+          },
+          "bodyRegistrationAnchor": [
+            320,
+            300
+          ],
+          "hitPoint": [
+            285,
+            235
+          ],
+          "hitRadius": 34,
+          "mouthAnchor": [
+            72,
+            172
+          ],
+          "mouthDirection": [
+            -1,
+            0
+          ]
+        },
+        {
+          "duration": 340,
+          "frame": {
+            "x": 2560,
+            "y": 0,
+            "w": 640,
+            "h": 720
+          },
+          "sourceSize": {
+            "w": 640,
+            "h": 720
+          },
+          "bodyRegistrationAnchor": [
+            320,
+            300
+          ],
+          "hitPoint": [
+            285,
+            235
+          ],
+          "hitRadius": 34,
+          "mouthAnchor": [
+            109,
+            135
+          ],
+          "mouthDirection": [
+            -1,
+            0
+          ]
+        },
+        {
+          "duration": 220,
+          "frame": {
+            "x": 3200,
+            "y": 0,
+            "w": 640,
+            "h": 720
+          },
+          "sourceSize": {
+            "w": 640,
+            "h": 720
+          },
+          "bodyRegistrationAnchor": [
+            320,
+            300
+          ],
+          "hitPoint": [
+            285,
+            235
+          ],
+          "hitRadius": 34,
+          "mouthAnchor": [
+            132,
+            100
+          ],
+          "mouthDirection": [
+            -1,
+            0
+          ]
+        }
+      ],
+      "image": "dragon-fire.png",
+      "source": "art/dragon/ashen-serpent-pack-v1/body/dragon-fire.png",
+      "sha256": "7a12e8d7494e1647e9c9b1a43ea745ed778511055bdeba35f6f4f5bde9096070"
+    },
+    "dragon-hit": {
+      "canvas": {
+        "width": 640,
+        "height": 720
+      },
+      "bodyRegistrationAnchor": [
+        320,
+        300
+      ],
+      "playbackRate": 1.0,
+      "loop": false,
+      "endBehavior": "hold-last-frame",
+      "frames": [
+        {
+          "duration": 80,
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 640,
+            "h": 720
+          },
+          "sourceSize": {
+            "w": 640,
+            "h": 720
+          },
+          "bodyRegistrationAnchor": [
+            320,
+            300
+          ],
+          "hitPoint": [
+            180,
+            285
+          ],
+          "hitRadius": 34
+        },
+        {
+          "duration": 100,
+          "frame": {
+            "x": 640,
+            "y": 0,
+            "w": 640,
+            "h": 720
+          },
+          "sourceSize": {
+            "w": 640,
+            "h": 720
+          },
+          "bodyRegistrationAnchor": [
+            320,
+            300
+          ],
+          "hitPoint": [
+            180,
+            285
+          ],
+          "hitRadius": 34
+        },
+        {
+          "duration": 140,
+          "frame": {
+            "x": 1280,
+            "y": 0,
+            "w": 640,
+            "h": 720
+          },
+          "sourceSize": {
+            "w": 640,
+            "h": 720
+          },
+          "bodyRegistrationAnchor": [
+            320,
+            300
+          ],
+          "hitPoint": [
+            180,
+            285
+          ],
+          "hitRadius": 34
+        },
+        {
+          "duration": 180,
+          "frame": {
+            "x": 1920,
+            "y": 0,
+            "w": 640,
+            "h": 720
+          },
+          "sourceSize": {
+            "w": 640,
+            "h": 720
+          },
+          "bodyRegistrationAnchor": [
+            320,
+            300
+          ],
+          "hitPoint": [
+            180,
+            285
+          ],
+          "hitRadius": 34
+        },
+        {
+          "duration": 180,
+          "frame": {
+            "x": 2560,
+            "y": 0,
+            "w": 640,
+            "h": 720
+          },
+          "sourceSize": {
+            "w": 640,
+            "h": 720
+          },
+          "bodyRegistrationAnchor": [
+            320,
+            300
+          ],
+          "hitPoint": [
+            180,
+            285
+          ],
+          "hitRadius": 34
+        },
+        {
+          "duration": 220,
+          "frame": {
+            "x": 3200,
+            "y": 0,
+            "w": 640,
+            "h": 720
+          },
+          "sourceSize": {
+            "w": 640,
+            "h": 720
+          },
+          "bodyRegistrationAnchor": [
+            320,
+            300
+          ],
+          "hitPoint": [
+            180,
+            285
+          ],
+          "hitRadius": 34
+        }
+      ],
+      "image": "dragon-hit.png",
+      "source": "art/dragon/ashen-serpent-pack-v1/body/dragon-hit.png",
+      "sha256": "322892d4b9900d1503b22235b6238221c9ff67cc44adc05a055f6a0ce923bacb"
+    },
+    "dragon-retreat": {
+      "canvas": {
+        "width": 640,
+        "height": 720
+      },
+      "bodyRegistrationAnchor": [
+        320,
+        300
+      ],
+      "playbackRate": 1.0,
+      "loop": false,
+      "endBehavior": "hold-last-frame",
+      "frames": [
+        {
+          "duration": 120,
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 640,
+            "h": 720
+          },
+          "sourceSize": {
+            "w": 640,
+            "h": 720
+          },
+          "bodyRegistrationAnchor": [
+            320,
+            300
+          ],
+          "hitPoint": [
+            285,
+            235
+          ],
+          "hitRadius": 34
+        },
+        {
+          "duration": 120,
+          "frame": {
+            "x": 640,
+            "y": 0,
+            "w": 640,
+            "h": 720
+          },
+          "sourceSize": {
+            "w": 640,
+            "h": 720
+          },
+          "bodyRegistrationAnchor": [
+            320,
+            300
+          ],
+          "hitPoint": [
+            285,
+            235
+          ],
+          "hitRadius": 34
+        },
+        {
+          "duration": 140,
+          "frame": {
+            "x": 1280,
+            "y": 0,
+            "w": 640,
+            "h": 720
+          },
+          "sourceSize": {
+            "w": 640,
+            "h": 720
+          },
+          "bodyRegistrationAnchor": [
+            320,
+            300
+          ],
+          "hitPoint": [
+            285,
+            235
+          ],
+          "hitRadius": 34
+        },
+        {
+          "duration": 180,
+          "frame": {
+            "x": 1920,
+            "y": 0,
+            "w": 640,
+            "h": 720
+          },
+          "sourceSize": {
+            "w": 640,
+            "h": 720
+          },
+          "bodyRegistrationAnchor": [
+            320,
+            300
+          ],
+          "hitPoint": [
+            285,
+            235
+          ],
+          "hitRadius": 34
+        },
+        {
+          "duration": 200,
+          "frame": {
+            "x": 2560,
+            "y": 0,
+            "w": 640,
+            "h": 720
+          },
+          "sourceSize": {
+            "w": 640,
+            "h": 720
+          },
+          "bodyRegistrationAnchor": [
+            320,
+            300
+          ],
+          "hitPoint": [
+            285,
+            235
+          ],
+          "hitRadius": 34
+        },
+        {
+          "duration": 240,
+          "frame": {
+            "x": 3200,
+            "y": 0,
+            "w": 640,
+            "h": 720
+          },
+          "sourceSize": {
+            "w": 640,
+            "h": 720
+          },
+          "bodyRegistrationAnchor": [
+            320,
+            300
+          ],
+          "hitPoint": [
+            285,
+            235
+          ],
+          "hitRadius": 34
+        }
+      ],
+      "image": "dragon-retreat.png",
+      "source": "art/dragon/ashen-serpent-pack-v1/body/dragon-retreat.png",
+      "sha256": "f6da330ebe489f6a4a3e137376789827965d6b18ad80ec2e3ddeb0627fa97535"
+    },
+    "fire-head": {
+      "canvas": {
+        "width": 384,
+        "height": 192
+      },
+      "frames": [
+        {
+          "duration": 160,
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 384,
+            "h": 192
+          },
+          "sourceSize": {
+            "w": 384,
+            "h": 192
+          }
+        },
+        {
+          "duration": 140,
+          "frame": {
+            "x": 384,
+            "y": 0,
+            "w": 384,
+            "h": 192
+          },
+          "sourceSize": {
+            "w": 384,
+            "h": 192
+          }
+        },
+        {
+          "duration": 60,
+          "frame": {
+            "x": 768,
+            "y": 0,
+            "w": 384,
+            "h": 192
+          },
+          "sourceSize": {
+            "w": 384,
+            "h": 192
+          }
+        },
+        {
+          "duration": 180,
+          "frame": {
+            "x": 1152,
+            "y": 0,
+            "w": 384,
+            "h": 192
+          },
+          "sourceSize": {
+            "w": 384,
+            "h": 192
+          }
+        },
+        {
+          "duration": 340,
+          "frame": {
+            "x": 1536,
+            "y": 0,
+            "w": 384,
+            "h": 192
+          },
+          "sourceSize": {
+            "w": 384,
+            "h": 192
+          }
+        },
+        {
+          "duration": 220,
+          "frame": {
+            "x": 1920,
+            "y": 0,
+            "w": 384,
+            "h": 192
+          },
+          "sourceSize": {
+            "w": 384,
+            "h": 192
+          }
+        }
+      ],
+      "mouthAnchor": [
+        352,
+        96
+      ],
+      "streamJoinAnchor": [
+        224,
+        96
+      ],
+      "image": "fire-head.png",
+      "source": "art/dragon/ashen-serpent-pack-v1/effects/fire/head.png",
+      "sha256": "8f328416c67d85e1777f436e11685d3cd62b775bbd17dcc69c7dfa94b2887b46"
+    },
+    "fire-stream": {
+      "canvas": {
+        "width": 128,
+        "height": 192
+      },
+      "frames": [
+        {
+          "duration": 160,
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 128,
+            "h": 192
+          },
+          "sourceSize": {
+            "w": 128,
+            "h": 192
+          }
+        },
+        {
+          "duration": 140,
+          "frame": {
+            "x": 128,
+            "y": 0,
+            "w": 128,
+            "h": 192
+          },
+          "sourceSize": {
+            "w": 128,
+            "h": 192
+          }
+        },
+        {
+          "duration": 60,
+          "frame": {
+            "x": 256,
+            "y": 0,
+            "w": 128,
+            "h": 192
+          },
+          "sourceSize": {
+            "w": 128,
+            "h": 192
+          }
+        },
+        {
+          "duration": 180,
+          "frame": {
+            "x": 384,
+            "y": 0,
+            "w": 128,
+            "h": 192
+          },
+          "sourceSize": {
+            "w": 128,
+            "h": 192
+          }
+        },
+        {
+          "duration": 340,
+          "frame": {
+            "x": 512,
+            "y": 0,
+            "w": 128,
+            "h": 192
+          },
+          "sourceSize": {
+            "w": 128,
+            "h": 192
+          }
+        },
+        {
+          "duration": 220,
+          "frame": {
+            "x": 640,
+            "y": 0,
+            "w": 128,
+            "h": 192
+          },
+          "sourceSize": {
+            "w": 128,
+            "h": 192
+          }
+        }
+      ],
+      "leftJoin": [
+        0,
+        96
+      ],
+      "rightJoin": [
+        128,
+        96
+      ],
+      "tileAxis": "x",
+      "tileable": true,
+      "image": "fire-stream.png",
+      "source": "art/dragon/ashen-serpent-pack-v1/effects/fire/stream.png",
+      "sha256": "d8835cccc91c162e23036dadfeaa31a4c559c0fb012a025892923ceab0ad3cac"
+    },
+    "fire-tip": {
+      "canvas": {
+        "width": 384,
+        "height": 192
+      },
+      "frames": [
+        {
+          "duration": 160,
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 384,
+            "h": 192
+          },
+          "sourceSize": {
+            "w": 384,
+            "h": 192
+          }
+        },
+        {
+          "duration": 140,
+          "frame": {
+            "x": 384,
+            "y": 0,
+            "w": 384,
+            "h": 192
+          },
+          "sourceSize": {
+            "w": 384,
+            "h": 192
+          }
+        },
+        {
+          "duration": 60,
+          "frame": {
+            "x": 768,
+            "y": 0,
+            "w": 384,
+            "h": 192
+          },
+          "sourceSize": {
+            "w": 384,
+            "h": 192
+          }
+        },
+        {
+          "duration": 180,
+          "frame": {
+            "x": 1152,
+            "y": 0,
+            "w": 384,
+            "h": 192
+          },
+          "sourceSize": {
+            "w": 384,
+            "h": 192
+          }
+        },
+        {
+          "duration": 340,
+          "frame": {
+            "x": 1536,
+            "y": 0,
+            "w": 384,
+            "h": 192
+          },
+          "sourceSize": {
+            "w": 384,
+            "h": 192
+          }
+        },
+        {
+          "duration": 220,
+          "frame": {
+            "x": 1920,
+            "y": 0,
+            "w": 384,
+            "h": 192
+          },
+          "sourceSize": {
+            "w": 384,
+            "h": 192
+          }
+        }
+      ],
+      "streamJoinAnchor": [
+        352,
+        96
+      ],
+      "image": "fire-tip.png",
+      "source": "art/dragon/ashen-serpent-pack-v1/effects/fire/tip.png",
+      "sha256": "960d7fa1efe9e30093c80358d04d5d8d9038c6f58abec8b5998b0877ab866ff2"
+    },
+    "beam-head": {
+      "canvas": {
+        "width": 380,
+        "height": 360
+      },
+      "playbackRate": 1.0,
+      "loop": false,
+      "frames": [
+        {
+          "duration": 120,
+          "frame": {
+            "h": 360,
+            "w": 380,
+            "x": 0,
+            "y": 0
+          },
+          "sourceSize": {
+            "h": 360,
+            "w": 380
+          }
+        },
+        {
+          "duration": 140,
+          "frame": {
+            "h": 360,
+            "w": 380,
+            "x": 380,
+            "y": 0
+          },
+          "sourceSize": {
+            "h": 360,
+            "w": 380
+          }
+        },
+        {
+          "duration": 170,
+          "frame": {
+            "h": 360,
+            "w": 380,
+            "x": 760,
+            "y": 0
+          },
+          "sourceSize": {
+            "h": 360,
+            "w": 380
+          }
+        },
+        {
+          "duration": 110,
+          "frame": {
+            "h": 360,
+            "w": 380,
+            "x": 1140,
+            "y": 0
+          },
+          "sourceSize": {
+            "h": 360,
+            "w": 380
+          }
+        },
+        {
+          "duration": 55,
+          "frame": {
+            "h": 360,
+            "w": 380,
+            "x": 1520,
+            "y": 0
+          },
+          "sourceSize": {
+            "h": 360,
+            "w": 380
+          }
+        },
+        {
+          "duration": 75,
+          "frame": {
+            "h": 360,
+            "w": 380,
+            "x": 1900,
+            "y": 0
+          },
+          "sourceSize": {
+            "h": 360,
+            "w": 380
+          }
+        },
+        {
+          "duration": 100,
+          "frame": {
+            "h": 360,
+            "w": 380,
+            "x": 2280,
+            "y": 0
+          },
+          "sourceSize": {
+            "h": 360,
+            "w": 380
+          }
+        },
+        {
+          "duration": 100,
+          "frame": {
+            "h": 360,
+            "w": 380,
+            "x": 2660,
+            "y": 0
+          },
+          "sourceSize": {
+            "h": 360,
+            "w": 380
+          }
+        },
+        {
+          "duration": 140,
+          "frame": {
+            "h": 360,
+            "w": 380,
+            "x": 3040,
+            "y": 0
+          },
+          "sourceSize": {
+            "h": 360,
+            "w": 380
+          }
+        },
+        {
+          "duration": 70,
+          "frame": {
+            "h": 360,
+            "w": 380,
+            "x": 3420,
+            "y": 0
+          },
+          "sourceSize": {
+            "h": 360,
+            "w": 380
+          }
+        },
+        {
+          "duration": 100,
+          "frame": {
+            "h": 360,
+            "w": 380,
+            "x": 3800,
+            "y": 0
+          },
+          "sourceSize": {
+            "h": 360,
+            "w": 380
+          }
+        },
+        {
+          "duration": 120,
+          "frame": {
+            "h": 360,
+            "w": 380,
+            "x": 4180,
+            "y": 0
+          },
+          "sourceSize": {
+            "h": 360,
+            "w": 380
+          }
+        }
+      ],
+      "origin": [
+        200,
+        180
+      ],
+      "join": [
+        380,
+        180
+      ],
+      "image": "beam-head.png",
+      "source": "art/kestrel/palette-pack-v1/stage/red/beam-head.png",
+      "sha256": "49a84ddaf43577916cdc92effd26527cd968d04f5ebbbcff608a10aaecdc3960"
+    },
+    "beam-stream": {
+      "canvas": {
+        "width": 64,
+        "height": 360
+      },
+      "playbackRate": 1.0,
+      "loop": false,
+      "frames": [
+        {
+          "duration": 120,
+          "frame": {
+            "h": 360,
+            "w": 64,
+            "x": 0,
+            "y": 0
+          },
+          "sourceSize": {
+            "h": 360,
+            "w": 64
+          }
+        },
+        {
+          "duration": 140,
+          "frame": {
+            "h": 360,
+            "w": 64,
+            "x": 64,
+            "y": 0
+          },
+          "sourceSize": {
+            "h": 360,
+            "w": 64
+          }
+        },
+        {
+          "duration": 170,
+          "frame": {
+            "h": 360,
+            "w": 64,
+            "x": 128,
+            "y": 0
+          },
+          "sourceSize": {
+            "h": 360,
+            "w": 64
+          }
+        },
+        {
+          "duration": 110,
+          "frame": {
+            "h": 360,
+            "w": 64,
+            "x": 192,
+            "y": 0
+          },
+          "sourceSize": {
+            "h": 360,
+            "w": 64
+          }
+        },
+        {
+          "duration": 55,
+          "frame": {
+            "h": 360,
+            "w": 64,
+            "x": 256,
+            "y": 0
+          },
+          "sourceSize": {
+            "h": 360,
+            "w": 64
+          }
+        },
+        {
+          "duration": 75,
+          "frame": {
+            "h": 360,
+            "w": 64,
+            "x": 320,
+            "y": 0
+          },
+          "sourceSize": {
+            "h": 360,
+            "w": 64
+          }
+        },
+        {
+          "duration": 100,
+          "frame": {
+            "h": 360,
+            "w": 64,
+            "x": 384,
+            "y": 0
+          },
+          "sourceSize": {
+            "h": 360,
+            "w": 64
+          }
+        },
+        {
+          "duration": 100,
+          "frame": {
+            "h": 360,
+            "w": 64,
+            "x": 448,
+            "y": 0
+          },
+          "sourceSize": {
+            "h": 360,
+            "w": 64
+          }
+        },
+        {
+          "duration": 140,
+          "frame": {
+            "h": 360,
+            "w": 64,
+            "x": 512,
+            "y": 0
+          },
+          "sourceSize": {
+            "h": 360,
+            "w": 64
+          }
+        },
+        {
+          "duration": 70,
+          "frame": {
+            "h": 360,
+            "w": 64,
+            "x": 576,
+            "y": 0
+          },
+          "sourceSize": {
+            "h": 360,
+            "w": 64
+          }
+        },
+        {
+          "duration": 100,
+          "frame": {
+            "h": 360,
+            "w": 64,
+            "x": 640,
+            "y": 0
+          },
+          "sourceSize": {
+            "h": 360,
+            "w": 64
+          }
+        },
+        {
+          "duration": 120,
+          "frame": {
+            "h": 360,
+            "w": 64,
+            "x": 704,
+            "y": 0
+          },
+          "sourceSize": {
+            "h": 360,
+            "w": 64
+          }
+        }
+      ],
+      "entry": [
+        0,
+        180
+      ],
+      "exit": [
+        64,
+        180
+      ],
+      "image": "beam-stream.png",
+      "source": "art/kestrel/palette-pack-v1/stage/red/beam-stream.png",
+      "sha256": "66f93359a1f7584e1809c89050e8a2b4457dd0eac5a2610537e6bd70b6438f41"
+    },
+    "beam-tip": {
+      "canvas": {
+        "width": 120,
+        "height": 360
+      },
+      "playbackRate": 1.0,
+      "loop": false,
+      "frames": [
+        {
+          "duration": 120,
+          "frame": {
+            "h": 360,
+            "w": 120,
+            "x": 0,
+            "y": 0
+          },
+          "sourceSize": {
+            "h": 360,
+            "w": 120
+          }
+        },
+        {
+          "duration": 140,
+          "frame": {
+            "h": 360,
+            "w": 120,
+            "x": 120,
+            "y": 0
+          },
+          "sourceSize": {
+            "h": 360,
+            "w": 120
+          }
+        },
+        {
+          "duration": 170,
+          "frame": {
+            "h": 360,
+            "w": 120,
+            "x": 240,
+            "y": 0
+          },
+          "sourceSize": {
+            "h": 360,
+            "w": 120
+          }
+        },
+        {
+          "duration": 110,
+          "frame": {
+            "h": 360,
+            "w": 120,
+            "x": 360,
+            "y": 0
+          },
+          "sourceSize": {
+            "h": 360,
+            "w": 120
+          }
+        },
+        {
+          "duration": 55,
+          "frame": {
+            "h": 360,
+            "w": 120,
+            "x": 480,
+            "y": 0
+          },
+          "sourceSize": {
+            "h": 360,
+            "w": 120
+          }
+        },
+        {
+          "duration": 75,
+          "frame": {
+            "h": 360,
+            "w": 120,
+            "x": 600,
+            "y": 0
+          },
+          "sourceSize": {
+            "h": 360,
+            "w": 120
+          }
+        },
+        {
+          "duration": 100,
+          "frame": {
+            "h": 360,
+            "w": 120,
+            "x": 720,
+            "y": 0
+          },
+          "sourceSize": {
+            "h": 360,
+            "w": 120
+          }
+        },
+        {
+          "duration": 100,
+          "frame": {
+            "h": 360,
+            "w": 120,
+            "x": 840,
+            "y": 0
+          },
+          "sourceSize": {
+            "h": 360,
+            "w": 120
+          }
+        },
+        {
+          "duration": 140,
+          "frame": {
+            "h": 360,
+            "w": 120,
+            "x": 960,
+            "y": 0
+          },
+          "sourceSize": {
+            "h": 360,
+            "w": 120
+          }
+        },
+        {
+          "duration": 70,
+          "frame": {
+            "h": 360,
+            "w": 120,
+            "x": 1080,
+            "y": 0
+          },
+          "sourceSize": {
+            "h": 360,
+            "w": 120
+          }
+        },
+        {
+          "duration": 100,
+          "frame": {
+            "h": 360,
+            "w": 120,
+            "x": 1200,
+            "y": 0
+          },
+          "sourceSize": {
+            "h": 360,
+            "w": 120
+          }
+        },
+        {
+          "duration": 120,
+          "frame": {
+            "h": 360,
+            "w": 120,
+            "x": 1320,
+            "y": 0
+          },
+          "sourceSize": {
+            "h": 360,
+            "w": 120
+          }
+        }
+      ],
+      "entry": [
+        0,
+        180
+      ],
+      "image": "beam-tip.png",
+      "source": "art/kestrel/palette-pack-v1/stage/red/beam-tip.png",
+      "sha256": "65ddab71ea71b48d32d24e61f682cc20364de359abdac39eff1fbd3488363967"
+    },
+    "impact": {
+      "canvas": {
+        "width": 256,
+        "height": 256
+      },
+      "playbackRate": 1.0,
+      "loop": false,
+      "frames": [
+        {
+          "duration": 45,
+          "frame": {
+            "h": 256,
+            "w": 256,
+            "x": 0,
+            "y": 0
+          },
+          "sourceSize": {
+            "h": 256,
+            "w": 256
+          }
+        },
+        {
+          "duration": 65,
+          "frame": {
+            "h": 256,
+            "w": 256,
+            "x": 256,
+            "y": 0
+          },
+          "sourceSize": {
+            "h": 256,
+            "w": 256
+          }
+        },
+        {
+          "duration": 90,
+          "frame": {
+            "h": 256,
+            "w": 256,
+            "x": 512,
+            "y": 0
+          },
+          "sourceSize": {
+            "h": 256,
+            "w": 256
+          }
+        },
+        {
+          "duration": 100,
+          "frame": {
+            "h": 256,
+            "w": 256,
+            "x": 768,
+            "y": 0
+          },
+          "sourceSize": {
+            "h": 256,
+            "w": 256
+          }
+        },
+        {
+          "duration": 100,
+          "frame": {
+            "h": 256,
+            "w": 256,
+            "x": 1024,
+            "y": 0
+          },
+          "sourceSize": {
+            "h": 256,
+            "w": 256
+          }
+        },
+        {
+          "duration": 100,
+          "frame": {
+            "h": 256,
+            "w": 256,
+            "x": 1280,
+            "y": 0
+          },
+          "sourceSize": {
+            "h": 256,
+            "w": 256
+          }
+        }
+      ],
+      "anchor": [
+        128,
+        128
+      ],
+      "durationMs": 500,
+      "image": "impact.png",
+      "source": "art/kestrel/palette-pack-v1/stage/red/impact-burst.png",
+      "sha256": "528df01a9e51732587a1a90c970a4d917b699f3f28ed663f48d0b91e38f11c78"
+    },
+    "skyline": {
+      "canvas": {
+        "width": 3024,
+        "height": 800
+      },
+      "playbackRate": 1.0,
+      "loop": false,
+      "frames": [
+        {
+          "duration": 1000,
+          "frame": {
+            "h": 800,
+            "w": 3024,
+            "x": 0,
+            "y": 0
+          },
+          "sourceSize": {
+            "h": 800,
+            "w": 3024
+          }
+        }
+      ],
+      "compositing": "Opaque, static near-black 3024x800 bottom strip. Separate skylineLights overlays; no full-skyline pulsing.",
+      "image": "skyline.png",
+      "source": "art/kestrel/palette-pack-v1/stage/red/night-skyline.png",
+      "sha256": "3f24b425fef48b9fc6bb3cbc06403235185490f6954572eb4e5eae5d36b82db3"
+    },
+    "ledge": {
+      "canvas": {
+        "width": 3024,
+        "height": 160
+      },
+      "topLine": 7,
+      "tileAxis": "x",
+      "tileWidth": 756,
+      "frames": [
+        {
+          "duration": 1000,
+          "frame": {
+            "h": 160,
+            "w": 3024,
+            "x": 0,
+            "y": 0
+          },
+          "sourceSize": {
+            "h": 160,
+            "w": 3024
+          }
+        }
+      ],
+      "compositing": "Static opaque black/slate parapet below topLine; transparent above. Draw over the skyline and behind Kestrel, aligning per-cel supportAnchors with its top line. Seated legs hang in front. Repeat at native resolution, then scale once. No flashing or palette glow.",
+      "image": "ledge.png",
+      "source": "art/kestrel/palette-pack-v1/guard/red/night-ledge.png",
+      "sha256": "87d4b62fda79b4d8bec92bf5e322b3143420c748da42b22e0ad4e704797357b4"
+    },
+    "fishing-segment": {
+      "canvas": {
+        "width": 16,
+        "height": 64
+      },
+      "playbackRate": 1.0,
+      "loop": true,
+      "frames": [
+        {
+          "duration": 1700,
+          "frame": {
+            "h": 64,
+            "w": 16,
+            "x": 0,
+            "y": 0
+          },
+          "sourceSize": {
+            "h": 64,
+            "w": 16
+          }
+        },
+        {
+          "duration": 150,
+          "frame": {
+            "h": 64,
+            "w": 16,
+            "x": 16,
+            "y": 0
+          },
+          "sourceSize": {
+            "h": 64,
+            "w": 16
+          }
+        },
+        {
+          "duration": 150,
+          "frame": {
+            "h": 64,
+            "w": 16,
+            "x": 32,
+            "y": 0
+          },
+          "sourceSize": {
+            "h": 64,
+            "w": 16
+          }
+        }
+      ],
+      "entryAnchor": [
+        8,
+        0
+      ],
+      "exitAnchor": [
+        8,
+        64
+      ],
+      "tileAxis": "y",
+      "image": "fishing-segment.png",
+      "source": "art/kestrel/palette-pack-v1/breaks/red/fishing-line.png",
+      "sha256": "bf05572aec11256af8655a71d3851860b49fad52a3c9818e7290c7bf3f6f683e"
+    },
+    "fishing-bobber": {
+      "canvas": {
+        "width": 64,
+        "height": 64
+      },
+      "playbackRate": 1.0,
+      "loop": true,
+      "frames": [
+        {
+          "duration": 1700,
+          "frame": {
+            "h": 64,
+            "w": 64,
+            "x": 0,
+            "y": 0
+          },
+          "sourceSize": {
+            "h": 64,
+            "w": 64
+          }
+        },
+        {
+          "duration": 150,
+          "frame": {
+            "h": 64,
+            "w": 64,
+            "x": 64,
+            "y": 0
+          },
+          "sourceSize": {
+            "h": 64,
+            "w": 64
+          }
+        },
+        {
+          "duration": 150,
+          "frame": {
+            "h": 64,
+            "w": 64,
+            "x": 128,
+            "y": 0
+          },
+          "sourceSize": {
+            "h": 64,
+            "w": 64
+          }
+        }
+      ],
+      "attachmentAnchor": [
+        32,
+        17
+      ],
+      "image": "fishing-bobber.png",
+      "source": "art/kestrel/palette-pack-v1/breaks/red/bobber.png",
+      "sha256": "4dd05acd1f631c34c7b300495fe33e8621077ea27fb3c90f303ab1ee9dc20f50"
+    }
+  },
+  "fight": {
+    "durationMs": 24000,
+    "stageReviewSize": [
+      1512,
+      800
+    ],
+    "cancelImmediatelyOn": [
+      "touch",
+      "unlock"
+    ],
+    "beats": [
+      {
+        "name": "arrival",
+        "startMs": 0,
+        "endMs": 4000,
+        "dragonClip": "dragon-arrive"
+      },
+      {
+        "name": "challenge",
+        "startMs": 4000,
+        "endMs": 8000,
+        "dragonClip": "dragon-challenge"
+      },
+      {
+        "name": "kestrel-beam",
+        "startMs": 8000,
+        "endMs": 11000,
+        "kestrelClip": "hover-attack"
+      },
+      {
+        "name": "dragon-fire",
+        "startMs": 11000,
+        "endMs": 15000,
+        "dragonClip": "dragon-fire"
+      },
+      {
+        "name": "hit",
+        "startMs": 15000,
+        "endMs": 18000,
+        "dragonClip": "dragon-hit"
+      },
+      {
+        "name": "retreat",
+        "startMs": 18000,
+        "endMs": 24000,
+        "dragonClip": "dragon-retreat"
+      }
+    ],
+    "counterShot": {
+      "climbStartMs": 13700,
+      "chargeStartMs": 14460,
+      "releaseMs": 15000,
+      "durationMs": 1300,
+      "kestrelTopY": 185,
+      "travelDurationMs": 760,
+      "dragonContactBodyPoint": [
+        180,
+        285
+      ],
+      "impactSizePx": 144,
+      "impactDurationMs": 500,
+      "lockImpactToWorldDuringRecoil": true
+    }
+  },
+  "beam": {
+    "releaseMs": 540,
+    "durationMs": 1300,
+    "bodyAnchors": [
+      [
+        254,
+        120
+      ],
+      [
+        254,
+        135
+      ],
+      [
+        240,
+        130
+      ],
+      [
+        260,
+        108
+      ],
+      [
+        257,
+        124
+      ],
+      [
+        260,
+        122
+      ]
+    ]
+  },
+  "dragonFireReleaseMs": 360,
+  "fishingAnchors": [
+    [
+      354,
+      223
+    ],
+    [
+      354,
+      223
+    ],
+    [
+      354,
+      233
+    ],
+    [
+      354,
+      223
+    ],
+    [
+      355,
+      217
+    ],
+    [
+      354,
+      223
+    ]
+  ],
+  "fishingCompositing": "Draw behind body from the current rod-tip anchor; repeat 16x64 raster segment vertically at native resolution, crop last tile, then scale once with body. Place bobber attachment [32,17] at line end. Do not stretch the line tile. Cast length factors [0,0,0,0.6,0.8,1]; reel [1,0.65,0.3,0,0,0]; wait adds [0,2,4,1,-1,0] physical px. Fish-reel cels 4-6 include the short catch line and fish, so disable extended line there. Preserve neutral silver-grey line; bobber accent matches palette."
+}

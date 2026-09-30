@@ -7,7 +7,11 @@
 <meta name="description" content="Meet Kestrel: a small macOS companion that roams your desktop, remembers your tasks, and keeps you company. An interactive 3D showcase.">
 <title>Kestrel · A little presence on your desktop</title>
 </head>
-<body>
+<body class="model-loading">
+<div id="model-loader" role="dialog" aria-modal="true" aria-labelledby="loading-title">
+<div class="loader-brand wordmark">KESTREL<span class="brand-wing" aria-hidden="true">/</span></div>
+<div class="loader-content"><canvas id="loading-fishing" width="500" height="550" aria-label="Kestrel fishing off a ledge while the 4K model loads"></canvas><h2 id="loading-title">A little fishing break.</h2><p id="loading-status" role="status">Bringing the 4K model into focus…</p><div class="loader-actions"><button id="loading-skip" class="text-button">Skip to animations <span aria-hidden="true">↗</span></button><button id="loading-retry" class="text-button" hidden>Retry 3D</button></div></div>
+</div>
 <a class="skip" href="#desktop">Skip the 3D story</a>
 <header class="navigation">
 <a href="#home" class="wordmark" aria-label="Kestrel home">KESTREL<span class="brand-wing" aria-hidden="true">/</span></a>
@@ -15,11 +19,12 @@
 <div class="nav-tools"><button id="motion-toggle" aria-pressed="false">Pause motion</button><button id="theme-toggle" aria-label="Change colour theme">Light</button></div>
 </header>
 <div id="stage" aria-label="Interactive 3D Kestrel model"><canvas id="model-canvas" aria-label="Tripo-generated 3D Kestrel"></canvas><p id="model-status" role="status">Bringing Kestrel into focus…</p></div>
-<div id="orbit-controls" hidden><p>Drag to orbit. Pinch to zoom.</p><button id="orbit-close">Return to the story</button><a href="./assets/models/kestrel.glb" download>Download the 3D model</a></div>
+<div id="orbit-controls" hidden><p>Drag to orbit. Pinch to zoom.</p><button id="orbit-close">Return to the story</button><a href="./assets/models/kestrel.glb?texture=4k-original" download="Kestrel-4K.glb">Download the 3D model</a></div>
 <main>
 <div id="story">
 <section id="home" class="chapter hero">
 <div class="chapter-copy"><h1>Small companion.<br>Big presence.</h1><p>A little mech that moves, remembers, and keeps you company on your Mac.</p><div class="hero-actions"><a class="button primary" href="#desktop">See Kestrel in action <span aria-hidden="true">↗</span></a><a class="text-button" href="#presence">Scroll to discover <span aria-hidden="true">↓</span></a></div></div>
+<p class="interaction-hint"><span class="pointer-hint">Move your pointer to look around.</span><span class="touch-hint">Drag lightly to shift your view.</span></p>
 <div class="hero-name" aria-hidden="true">KESTREL</div>
 </section>
 <section id="presence" class="chapter align-right">
@@ -44,7 +49,7 @@
 <section id="desktop" class="desktop-section">
 <div class="section-heading"><h2>From the big screen<br>to your little corner.</h2><p>Play with the exact sprite drawings and timings used by the macOS app.</p></div>
 <div class="desktop-demo">
-<div class="demo-toolbar"><span>Kestrel animation playground</span><button id="demo-roam" aria-pressed="true">Roaming on</button></div>
+<div class="demo-toolbar"><span id="demo-title">Kestrel animation playground</span><button id="demo-roam" aria-pressed="true">Roaming on</button></div>
 <div class="desk-surface">
 <div class="desk-heading">Make room for<br>a little company.</div>
 <div class="task-pad"><h3>A little to-do list</h3><p>Try completing a task.</p><form id="task-form"><label class="sr-only" for="task-input">Add a demo task</label><input id="task-input" maxlength="80" placeholder="Something to remember…" required><button type="submit" aria-label="Add task">+</button></form><ul id="demo-tasks"><li><label><input type="checkbox"> Water the desk plant</label></li><li><label><input type="checkbox"> Send the final design</label></li></ul><p class="demo-note">Interactive web demo. Nothing is saved or sent.</p></div>
@@ -52,7 +57,13 @@
 <div id="sprite-bubble" role="status" hidden>Nicely done.</div>
 <div class="desk-ledge" aria-hidden="true"></div>
 </div>
-<div class="demo-controls"><fieldset><legend>Colour</legend><button data-palette="red" aria-pressed="true">Red</button><button data-palette="amber" aria-pressed="false">Amber</button><button data-palette="violet" aria-pressed="false">Violet</button><button data-palette="pearl" aria-pressed="false">Pearl</button></fieldset><fieldset><legend>Action</legend><button data-action="idle" aria-pressed="true">Idle</button><button data-action="walk" aria-pressed="false">Walk</button><button data-action="hover" aria-pressed="false">Fly</button><button data-action="knock" aria-pressed="false">Knock</button><button data-action="read" aria-pressed="false">Read</button><button data-action="guard-alert" aria-pressed="false">Guard</button><button data-action="fish-wait" aria-pressed="false">Fish</button></fieldset></div>
+<div id="fight-viewer" hidden>
+<div class="fight-heading"><div><p class="eyebrow">The original pixel-art showdown</p><h3>Kestrel × Ashen Serpent</h3><p>24 seconds. Six beats. One well-timed counter-shot.</p></div><p id="fight-status" role="status">Loading the fight’s original animation sheets…</p></div>
+<canvas id="fight-canvas" width="1512" height="800" aria-label="Kestrel and the Ashen Serpent fight over the original night skyline"></canvas>
+<div class="fight-controls"><button id="fight-toggle" disabled aria-pressed="false">Play fight</button><button id="fight-replay" disabled>Replay fight</button><label class="sr-only" for="fight-scrub">Fight timeline</label><input id="fight-scrub" type="range" min="0" max="24000" step="10" value="0" disabled><output id="fight-readout" for="fight-scrub">0.00 s · arrival</output><button data-fight-speed="1" aria-pressed="true" disabled>1×</button><button data-fight-speed="0.25" aria-pressed="false" disabled>0.25×</button></div>
+<div class="fight-beats" aria-label="Jump to a fight beat"><button data-fight-beat="arrival" disabled>Arrival</button><button data-fight-beat="challenge" disabled>Challenge</button><button data-fight-beat="kestrel-beam" disabled>Kestrel beam</button><button data-fight-beat="dragon-fire" disabled>Dragon fire</button><button data-fight-beat="hit" disabled>Counter-shot</button><button data-fight-beat="retreat" disabled>Retreat</button></div>
+</div>
+<div class="demo-controls"><fieldset><legend>Colour</legend><button data-palette="red" aria-pressed="true">Red</button><button data-palette="amber" aria-pressed="false">Amber</button><button data-palette="violet" aria-pressed="false">Violet</button><button data-palette="pearl" aria-pressed="false">Pearl</button></fieldset><fieldset><legend>Action</legend><button data-action="idle" aria-pressed="true">Idle</button><button data-action="walk" aria-pressed="false">Walk</button><button data-action="hover" aria-pressed="false">Fly</button><button data-action="knock" aria-pressed="false">Knock</button><button data-action="read" aria-pressed="false">Read</button><button data-action="guard-alert" aria-pressed="false">Guard</button><button data-action="fish-wait" aria-pressed="false">Fish</button><button data-action="dragon-fight" aria-pressed="false">Dragon fight</button></fieldset></div>
 </div>
 <p class="demo-caption">Original app animation assets. The website demonstrates their playback; the native macOS app handles your desktop, tasks, sensors, and model connections.</p>
 </section>
@@ -61,7 +72,7 @@
 <div class="build-notes"><dl><div><dt>Platform</dt><dd>macOS 26.5+ · Apple silicon</dd></div><div><dt>Character</dt><dd>Original 2D sprite animation</dd></div><div><dt>This showcase</dt><dd>Tripo-generated 3D interpretation</dd></div><div><dt>Availability</dt><dd>Development build. No public download yet.</dd></div></dl><a class="text-button" href="#home">Meet Kestrel again <span aria-hidden="true">↗</span></a></div>
 </section>
 </main>
-<footer><a class="wordmark" href="#home">KESTREL<span class="brand-wing" aria-hidden="true">/</span></a><p>A little presence on your desktop.</p><a href="./assets/models/kestrel.glb" download>3D model ↓</a></footer>
+<footer><a class="wordmark" href="#home">KESTREL<span class="brand-wing" aria-hidden="true">/</span></a><p>A little presence on your desktop.</p><a href="./assets/models/kestrel.glb?texture=4k-original" download="Kestrel-4K.glb">3D model ↓</a></footer>
 <script type="module" src="./src/main.js"></script>
 </body>
 </html>

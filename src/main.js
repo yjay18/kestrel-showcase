@@ -1,5 +1,6 @@
 import '@fontsource/ibm-plex-mono/latin-400.css';
 import './style.css';
+import {createFishingLoader} from './loading.js';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -25,6 +26,11 @@ function applyMotion() {
 $('#motion-toggle').addEventListener('click', () => {paused = !paused; applyMotion();});
 reduced.addEventListener('change', (event) => {paused = event.matches; applyMotion();});
 applyTheme(); applyMotion();
+const sceneManifest=fetch(asset('scenes/manifest.json')).then(response=>{
+  if(!response.ok)throw new Error('Scene manifest unavailable');
+  return response.json();
+});
+createFishingLoader(asset,sceneManifest,()=>paused);
 
 // Read-only native export metadata; never redraw, interpolate or retime approved cels.
 const clips = await fetch(asset('sprites/clips.json')).then(response => {
@@ -81,10 +87,16 @@ const observer = new IntersectionObserver(entries => {
 sprites.forEach(s=>observer.observe(s.canvas));
 let palette = 'red', selectedAction = 'idle', roaming = true, demoX = 0, drag = null, last = performance.now(), roamingPhase = -1;
 const desk = $('.desk-surface');
+let fightPromise;
 function setAction(action) {
   selectedAction = action;
   document.querySelectorAll('[data-action]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.action === action)));
-  demo.set(action,palette);
+  const fight=action==='dragon-fight';
+  $('#fight-viewer').hidden=!fight;desk.hidden=fight;$('#demo-roam').hidden=fight;
+  $('.demo-controls fieldset').hidden=fight;$('#demo-title').textContent=fight?'Kestrel × Ashen Serpent':'Kestrel animation playground';
+  if(fight) {
+    fightPromise??=import('./fight.js').then(({createFightViewer})=>createFightViewer({asset,manifestPromise:sceneManifest,isPaused:()=>paused,isShown:()=>selectedAction==='dragon-fight',resumeMotion:()=>{paused=false;applyMotion();}})).catch(()=>{$('#fight-status').textContent='The fight could not load. Reload to retry, or choose another action.';});
+  } else demo.set(action,palette);
 }
 function setPalette(value) {
   palette = value;
@@ -144,6 +156,6 @@ requestAnimationFrame(animateSprites);
 // The large WebGL runtime is deferred; readable content and native art appear immediately.
 const startScene=()=>import('./scene.js').then(({createScene})=>createScene({
   canvas:$('#model-canvas'),asset,gsap,ScrollTrigger,isPaused:()=>paused,isReduced:()=>reduced.matches,getTheme:()=>theme,
-})).catch(()=>{$('#model-status').textContent='3D could not load. Kestrel’s original animations are still available below.';});
+})).catch(()=>{$('#model-status').textContent='3D could not load. Kestrel’s original animations are still available below.';document.dispatchEvent(new Event('kestrel-model-error'));});
 
 if ('requestIdleCallback' in window) requestIdleCallback(startScene,{timeout:1500}); else setTimeout(startScene,100);
