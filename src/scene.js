@@ -99,9 +99,9 @@ export async function createScene({canvas,asset,gsap,ScrollTrigger,isPaused,isRe
     if (freeOrbit) return;
     const x=Math.min(progress*6,5.9999),i=Math.floor(x),p=x-i;
     const ease=isReduced()||isPaused()?0:p*p*(3-2*p),a=frames[i],b=frames[i+1];
-    camera.alpha=a.a+(b.a-a.a)*ease;camera.beta=a.b+(b.b-a.b)*ease;camera.radius=(a.r+(b.r-a.r)*ease)*(mobile()?1.28:1);
+    camera.alpha=a.a+(b.a-a.a)*ease;camera.beta=a.b+(b.b-a.b)*ease;camera.radius=(a.r+(b.r-a.r)*ease)*(mobile()?1.42:1);
     const target=a.t.map((value,index)=>value+(b.t[index]-value)*ease);
-    if (mobile()) {target[0]=0;target[1]+=1.0;camera.beta=1.33;}
+    if (mobile()) {target[0]=0;target[1]+=1.45;camera.beta=1.33;}
     camera.setTarget(Vector3.FromArray(target));
     const framesAway=Math.max(0,Math.min(1,(progress-.08)/.15))*Math.max(0,1-(progress-.34)/.14);
     portals.getChildMeshes().forEach(mesh=>mesh.visibility=framesAway+(progress>.8?.8:0));
