@@ -5,8 +5,18 @@
   "sourceReference": "approved red idle first cel",
   "referenceSHA256": "d5113665fcbbff92b36c6bd3a9e8af161c07f833f93996400750b7747faa005e",
   "originalGLBSHA256": "8933b30127d7c851e30e094589a2742495c11f5a1b16d6a7d410c5c696058b0e",
-  "webGLBSHA256": "014e11797f970f09eccb77f3d92a8b23385a656e06b7f80579598e6c49abaa09",
-  "textureProcessing": "glTF-Transform resize 2048 then WebP quality 92; no simplification",
+  "webGLBSHA256": "cb8ab38ff0b8402c7a62a74986f505f8c4ad96c42ea2203143a1176e7cd71c4e",
+  "textureProcessing": "Original 4096x4096 PNG/JPEG texture bytes retained unchanged; no resizing or re-encoding",
   "nativeSpriteSource": "Companion/art/kestrel/palette-pack-v1; exact selected composite sheets and timing",
-  "geometryProcessing": "Meshopt medium compression; 16-bit position/UV, 14-bit normal quantization; every triangle retained, no simplification"
+  "geometryProcessing": "Meshopt medium compression; 16-bit position/UV, 14-bit normal quantization; every triangle retained, no simplification",
+  "textureDimensions": [
+    4096,
+    4096
+  ],
+  "webGLBBytes": 12203928,
+  "originalTextureSHA256": {
+    "Kestrel_normal": "83008d52bfc9c251e9a540193c32d6ae8d420abb42c1662abdb07b381167a0bf",
+    "Kestrel_basecolor": "a49dc6dd08c2f5432bd9d366e3fd4f555494aae88f7c0ae1a4ff64e6a7bfbb85",
+    "Kestrel_rm": "474ed3235247b6c0f3370178e23d3272540859158d3d7c525d184188ca69545a"
+  }
 }
