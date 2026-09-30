@@ -1,0 +1,12 @@
+{
+  "modelGenerator": "Tripo H3.1",
+  "generationId": "c32325d6-5bf8-4218-9c4a-abf8e490d58f",
+  "faces": 495914,
+  "sourceReference": "approved red idle first cel",
+  "referenceSHA256": "d5113665fcbbff92b36c6bd3a9e8af161c07f833f93996400750b7747faa005e",
+  "originalGLBSHA256": "8933b30127d7c851e30e094589a2742495c11f5a1b16d6a7d410c5c696058b0e",
+  "webGLBSHA256": "014e11797f970f09eccb77f3d92a8b23385a656e06b7f80579598e6c49abaa09",
+  "textureProcessing": "glTF-Transform resize 2048 then WebP quality 92; no simplification",
+  "nativeSpriteSource": "Companion/art/kestrel/palette-pack-v1; exact selected composite sheets and timing",
+  "geometryProcessing": "Meshopt medium compression; 16-bit position/UV, 14-bit normal quantization; every triangle retained, no simplification"
+}

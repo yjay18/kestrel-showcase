@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" href="./assets/kestrel-reference.png" type="image/png">
+<meta name="theme-color" content="#0b0c0f">
+<meta name="description" content="Meet Kestrel: a small macOS companion that roams your desktop, remembers your tasks, and keeps you company. An interactive 3D showcase.">
+<title>Kestrel · A little presence on your desktop</title>
+</head>
+<body>
+<a class="skip" href="#desktop">Skip the 3D story</a>
+<header class="navigation">
+<a href="#home" class="wordmark" aria-label="Kestrel home">KESTREL<span class="brand-wing" aria-hidden="true">/</span></a>
+<nav aria-label="Main navigation"><a href="#presence">The companion</a><a href="#desktop">Try the animations</a><a href="#about">The app</a></nav>
+<div class="nav-tools"><button id="motion-toggle" aria-pressed="false">Pause motion</button><button id="theme-toggle" aria-label="Change colour theme">Light</button></div>
+</header>
+<div id="stage" aria-label="Interactive 3D Kestrel model"><canvas id="model-canvas" aria-label="Tripo-generated 3D Kestrel"></canvas><img id="model-fallback" fetchpriority="high" decoding="async" width="220" height="340" src="./assets/kestrel-reference.png" alt="Kestrel, a black-and-red armoured mechanical companion"><p id="model-status" role="status">Bringing Kestrel into focus…</p></div>
+<div id="orbit-controls" hidden><p>Drag to orbit. Pinch to zoom.</p><button id="orbit-close">Return to the story</button><a href="./assets/models/kestrel.glb" download>Download the 3D model</a></div>
+<main>
+<div id="story">
+<section id="home" class="chapter hero">
+<div class="chapter-copy"><h1>Small companion.<br>Big presence.</h1><p>A little mech that moves, remembers, and keeps you company on your Mac.</p><div class="hero-actions"><a class="button primary" href="#desktop">See Kestrel in action <span aria-hidden="true">↗</span></a><button class="text-button" id="orbit-open">Explore in 3D <span aria-hidden="true">↗</span></button></div></div>
+<div class="hero-name" aria-hidden="true">KESTREL</div>
+</section>
+<section id="presence" class="chapter align-right">
+<div class="chapter-copy"><h2>Room to roam.</h2><p>Kestrel walks along your windows, takes off, finds a perch, and lands. A moving companion in the middle of your day.</p><div class="clip-strip"><canvas data-clip="walk" data-palette="red" width="380" height="380" aria-label="Kestrel’s actual walking animation"></canvas><span>Walk. Fly. Perch.</span></div><p class="fine">Drag, pick up, or throw Kestrel. Choose a roaming pace, or give it an idle break.</p></div>
+</section>
+<section id="remember" class="chapter align-left">
+<div class="chapter-copy"><h2>A tap before<br>you forget.</h2><p>Tasks, repeating reminders, and an early knock before something is due. Your companion changes colour with your day.</p><div class="clip-strip"><canvas data-clip="knock" data-palette="amber" width="380" height="380" aria-label="Kestrel’s actual amber reminder animation"></canvas><span>Amber when a reminder is near.<br>Violet when a task is overdue.</span></div><p class="fine">Tasks stay on your Mac. Notifications and calendar reminders use macOS permissions.</p></div>
+</section>
+<section id="notice" class="chapter align-right">
+<div class="chapter-copy"><h2>More than<br>good company.</h2><p>Chat with Kestrel. Bring it a document. Turn on observation when you want a companion that notices your work.</p><div class="clip-strip"><canvas data-clip="read" data-palette="red" width="380" height="380" aria-label="Kestrel’s actual reading animation"></canvas><span>Read. Review. Make a plan.</span></div><p class="fine">Document suggestions are reviewed before becoming tasks. Remote models require your opt-in and a connection.</p></div>
+</section>
+<section id="guard" class="chapter align-left">
+<div class="chapter-copy"><h2>Step away.<br>Keep a lookout.</h2><p>Hide your screen with Kestrel on watch. The public guard uses intruder photos and sonar to notice nearby movement.</p><div class="clip-strip"><canvas data-clip="guard-alert" data-palette="red" width="380" height="380" aria-label="Kestrel’s actual guard alert animation"></canvas><span>Camera + sonar.<br>A report when you return.</span></div><p class="fine">Requires camera and microphone permissions. Public sonar samples are processed in memory and discarded.</p></div>
+</section>
+<section id="unwind" class="chapter wide-copy">
+<div class="chapter-copy"><h2>And a little<br>time to just be.</h2><p>Read, stretch, sip a coffee, or fish above a hidden skyline. Small moments between the things you need to do.</p><div class="clip-strip"><canvas data-clip="fish-wait" data-palette="red" width="380" height="380" aria-label="Kestrel’s actual fishing animation"></canvas><span>Built-in breaks.<br>A personality, frame by frame.</span></div></div>
+</section>
+</div>
+<section id="desktop" class="desktop-section">
+<div class="section-heading"><h2>From the big screen<br>to your little corner.</h2><p>Play with the exact sprite drawings and timings used by the macOS app.</p></div>
+<div class="desktop-demo">
+<div class="demo-toolbar"><span>Kestrel animation playground</span><button id="demo-roam" aria-pressed="true">Roaming on</button></div>
+<div class="desk-surface">
+<div class="desk-heading">Make room for<br>a little company.</div>
+<div class="task-pad"><h3>A little to-do list</h3><p>Try completing a task.</p><form id="task-form"><label class="sr-only" for="task-input">Add a demo task</label><input id="task-input" maxlength="80" placeholder="Something to remember…" required><button type="submit" aria-label="Add task">+</button></form><ul id="demo-tasks"><li><label><input type="checkbox"> Water the desk plant</label></li><li><label><input type="checkbox"> Send the final design</label></li></ul><p class="demo-note">Interactive web demo. Nothing is saved or sent.</p></div>
+<canvas id="desktop-sprite" width="380" height="380" aria-label="Animated Kestrel roaming the demonstration desktop"></canvas>
+<div id="sprite-bubble" role="status" hidden>Nicely done.</div>
+<div class="desk-ledge" aria-hidden="true"></div>
+</div>
+<div class="demo-controls"><fieldset><legend>Colour</legend><button data-palette="red" aria-pressed="true">Red</button><button data-palette="amber" aria-pressed="false">Amber</button><button data-palette="violet" aria-pressed="false">Violet</button><button data-palette="pearl" aria-pressed="false">Pearl</button></fieldset><fieldset><legend>Action</legend><button data-action="idle" aria-pressed="true">Idle</button><button data-action="walk" aria-pressed="false">Walk</button><button data-action="hover" aria-pressed="false">Fly</button><button data-action="knock" aria-pressed="false">Knock</button><button data-action="read" aria-pressed="false">Read</button><button data-action="guard-alert" aria-pressed="false">Guard</button><button data-action="fish-wait" aria-pressed="false">Fish</button></fieldset></div>
+</div>
+<p class="demo-caption">Original app animation assets. The website demonstrates their playback; the native macOS app handles your desktop, tasks, sensors, and model connections.</p>
+</section>
+<section id="about" class="about-section">
+<div><p class="eyebrow">Built for the desktop</p><h2>Presence.<br>Without another tab.</h2><p>Kestrel is Companion’s black-and-red desktop character, built with AppKit and SwiftUI. Its home is your Mac.</p></div>
+<div class="build-notes"><dl><div><dt>Platform</dt><dd>macOS 26.5+ · Apple silicon</dd></div><div><dt>Character</dt><dd>Original 2D sprite animation</dd></div><div><dt>This showcase</dt><dd>Tripo-generated 3D interpretation</dd></div><div><dt>Availability</dt><dd>Development build. No public download yet.</dd></div></dl><a class="text-button" href="#home">Meet Kestrel again <span aria-hidden="true">↗</span></a></div>
+</section>
+</main>
+<footer><a class="wordmark" href="#home">KESTREL<span class="brand-wing" aria-hidden="true">/</span></a><p>A little presence on your desktop.</p><a href="./assets/models/kestrel.glb" download>3D model ↓</a></footer>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
