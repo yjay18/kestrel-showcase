@@ -14,12 +14,12 @@
 <nav aria-label="Main navigation"><a href="#presence">The companion</a><a href="#desktop">Try the animations</a><a href="#about">The app</a></nav>
 <div class="nav-tools"><button id="motion-toggle" aria-pressed="false">Pause motion</button><button id="theme-toggle" aria-label="Change colour theme">Light</button></div>
 </header>
-<div id="stage" aria-label="Interactive 3D Kestrel model"><canvas id="model-canvas" aria-label="Tripo-generated 3D Kestrel"></canvas><img id="model-fallback" fetchpriority="high" decoding="async" width="220" height="340" src="./assets/kestrel-reference.png" alt="Kestrel, a black-and-red armoured mechanical companion"><p id="model-status" role="status">Bringing Kestrel into focus…</p></div>
+<div id="stage" aria-label="Interactive 3D Kestrel model"><canvas id="model-canvas" aria-label="Tripo-generated 3D Kestrel"></canvas><p id="model-status" role="status">Bringing Kestrel into focus…</p></div>
 <div id="orbit-controls" hidden><p>Drag to orbit. Pinch to zoom.</p><button id="orbit-close">Return to the story</button><a href="./assets/models/kestrel.glb" download>Download the 3D model</a></div>
 <main>
 <div id="story">
 <section id="home" class="chapter hero">
-<div class="chapter-copy"><h1>Small companion.<br>Big presence.</h1><p>A little mech that moves, remembers, and keeps you company on your Mac.</p><div class="hero-actions"><a class="button primary" href="#desktop">See Kestrel in action <span aria-hidden="true">↗</span></a><button class="text-button" id="orbit-open">Explore in 3D <span aria-hidden="true">↗</span></button></div></div>
+<div class="chapter-copy"><h1>Small companion.<br>Big presence.</h1><p>A little mech that moves, remembers, and keeps you company on your Mac.</p><div class="hero-actions"><a class="button primary" href="#desktop">See Kestrel in action <span aria-hidden="true">↗</span></a><a class="text-button" href="#presence">Scroll to discover <span aria-hidden="true">↓</span></a></div></div>
 <div class="hero-name" aria-hidden="true">KESTREL</div>
 </section>
 <section id="presence" class="chapter align-right">
@@ -36,6 +36,9 @@
 </section>
 <section id="unwind" class="chapter wide-copy">
 <div class="chapter-copy"><h2>And a little<br>time to just be.</h2><p>Read, stretch, sip a coffee, or fish above a hidden skyline. Small moments between the things you need to do.</p><div class="clip-strip"><canvas data-clip="fish-wait" data-palette="red" width="380" height="380" aria-label="Kestrel’s actual fishing animation"></canvas><span>Built-in breaks.<br>A personality, frame by frame.</span></div></div>
+</section>
+<section id="reveal" class="chapter reveal-chapter">
+<div class="chapter-copy"><p class="eyebrow">Every detail. A little personality.</p><h2>Meet Kestrel.</h2><p>Your little corner of the desktop.</p><div class="hero-actions"><button class="button primary" id="orbit-open">Explore in 3D <span aria-hidden="true">↗</span></button><a class="text-button" href="#desktop">Try the real animations <span aria-hidden="true">↓</span></a></div></div>
 </section>
 </div>
 <section id="desktop" class="desktop-section">
