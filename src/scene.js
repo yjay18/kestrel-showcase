@@ -19,10 +19,13 @@ import {MeshoptCompression} from '@babylonjs/core/Meshes/Compression/meshoptComp
 
 export async function createScene({canvas,asset,gsap,ScrollTrigger,isPaused,isReduced,getTheme}) {
   MeshoptCompression.Configuration.decoder.url=asset('meshopt_decoder.js');
-  const engine = new Engine(canvas,true,{preserveDrawingBuffer:true,stencil:true},true);
+  const engine = new Engine(canvas,true,{preserveDrawingBuffer:true,stencil:true},false);
   canvas.tabIndex=-1;
   engine.canvasTabIndex=0;
-  engine.setHardwareScalingLevel(Math.max(1,devicePixelRatio/1.6));
+  // Babylon divides canvas dimensions by this value. Use the inverse DPR so
+  // Retina displays receive actual detail instead of an enlarged low-res image.
+  const resizeRender=()=>engine.setHardwareScalingLevel(1/Math.max(1,Math.min(devicePixelRatio,2)));
+  resizeRender();
   const scene=new Scene(engine);
   const camera=new ArcRotateCamera('tour',-1.1,1.2,1.85,new Vector3(0,2.5,0),scene);
   camera.minZ=.03;camera.maxZ=100;camera.fov=.7;camera.lowerRadiusLimit=.8;camera.upperRadiusLimit=12;
@@ -50,7 +53,12 @@ export async function createScene({canvas,asset,gsap,ScrollTrigger,isPaused,isRe
     root.position.set(-centre.x*scale,-bounds.min.y*scale,-centre.z*scale);
     for (const mesh of imported) {
       // Preserve Tripo's base colour, normal and metallic/roughness maps.
-      if (mesh.material) mesh.material.backFaceCulling=false;
+      if (mesh.material) {
+        mesh.material.backFaceCulling=false;
+        for(const texture of mesh.material.getActiveTextures()) {
+          texture.anisotropicFilteringLevel=Math.min(16,engine.getCaps().maxAnisotropy||1);
+        }
+      }
       mesh.isPickable=false;
     }
   } catch (error) {
@@ -115,6 +123,6 @@ export async function createScene({canvas,asset,gsap,ScrollTrigger,isPaused,isRe
     scene.render();
   });
   if(imported.length)scene.executeWhenReady(()=>{updateCamera();scene.render();document.body.classList.add('model-ready');document.dispatchEvent(new Event('kestrel-model-ready'));});
-  window.addEventListener('resize',()=>{engine.resize();ScrollTrigger.refresh();});
+  window.addEventListener('resize',()=>{resizeRender();ScrollTrigger.refresh();});
   window.addEventListener('pagehide',()=>{timeline.kill();engine.dispose();},{once:true});
 }

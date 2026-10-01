@@ -20,6 +20,8 @@ npm run preview
 
 The selected sheets and manifest preserve the app's exact cels, pivots, playback rates, and one-shot/loop behavior. The verifier also checks them byte-for-byte when this directory is inside the Companion checkout. The web playground's tasks are synthetic, transient DOM state; it never calls a model, a sensor, the installed app, or the owner's task store.
 
+The 3D canvas renders at device pixel density, capped at 2×, and uses up to 16× anisotropic texture filtering when supported. Resize refreshes the pixel density. Original 4K maps cover the whole model's UV atlas; their soft generated surface detail remains a source-art limitation, even with sharp rendering.
+
 ## Publishing
 
 The public `yjay18/kestrel-showcase` repo holds only this website. `main` holds source; `gh-pages` holds the generated contents of `dist/`, including `.nojekyll`. GitHub Pages publishes `gh-pages` at `/`. Future source updates require rebuilding and updating the deployment branch, then verifying the live model, camera path and playground. The Vite base is relative so project Pages paths work.
