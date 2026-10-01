@@ -6,16 +6,17 @@
 <meta name="theme-color" content="#0b0c0f">
 <meta name="description" content="Meet Kestrel: a small macOS companion that roams your desktop, remembers your tasks, and keeps you company. An interactive 3D showcase.">
 <title>Kestrel · A little presence on your desktop</title>
-  <script type="module" crossorigin src="./assets/index-BdOiPf7L.js"></script>
+  <script type="module" crossorigin src="./assets/index-C2ZKs2df.js"></script>
   <link rel="modulepreload" crossorigin href="./assets/scene-art-BSTkQtwQ.js">
   <link rel="modulepreload" crossorigin href="./assets/preload-helper-uBIymjUX.js">
-  <link rel="stylesheet" crossorigin href="./assets/index-D0NSURSl.css">
+  <link rel="stylesheet" crossorigin href="./assets/index-qMw9tXuL.css">
 </head>
 <body class="model-loading">
 <div id="model-loader" role="dialog" aria-modal="true" aria-labelledby="loading-title">
 <div class="loader-brand wordmark">KESTREL<span class="brand-wing" aria-hidden="true">/</span></div>
 <div class="loader-content"><canvas id="loading-fishing" width="500" height="550" aria-label="Kestrel fishing off a ledge while the 4K model loads"></canvas><h2 id="loading-title">A little fishing break.</h2><p id="loading-status" role="status">Bringing the 4K model into focus…</p><div class="loader-actions"><button id="loading-skip" class="text-button">Skip to animations <span aria-hidden="true">↗</span></button><button id="loading-retry" class="text-button" hidden>Retry 3D</button></div></div>
 </div>
+<div id="hologram-splash" hidden><button id="hologram-skip" class="text-button">Skip intro <span aria-hidden="true">↗</span></button><div class="hologram-caption"><p class="wordmark">KESTREL<span class="brand-wing" aria-hidden="true">/</span></p><p role="status">Coming into focus.</p></div><div class="hologram-glyphs" aria-hidden="true">0101<br>0110<br>1010<br>0011<br>1100<br>0101<br>0110<br>1010</div></div>
 <a class="skip" href="#desktop">Skip the 3D story</a>
 <header class="navigation">
 <a href="#home" class="wordmark" aria-label="Kestrel home">KESTREL<span class="brand-wing" aria-hidden="true">/</span></a>
@@ -23,7 +24,7 @@
 <div class="nav-tools"><button id="motion-toggle" aria-pressed="false">Pause motion</button><button id="theme-toggle" aria-label="Change colour theme">Light</button></div>
 </header>
 <div id="stage" aria-label="Interactive 3D Kestrel model"><canvas id="model-canvas" aria-label="Tripo-generated 3D Kestrel"></canvas><p id="model-status" role="status">Bringing Kestrel into focus…</p></div>
-<div id="orbit-controls" hidden><p>Drag to orbit. Pinch to zoom.</p><button id="orbit-close">Return to the story</button><a href="./assets/models/kestrel.glb?texture=4k-original" download="Kestrel-4K.glb">Download the 3D model</a></div>
+<div id="orbit-controls" hidden><p>Drag to orbit. Pinch to zoom.</p><button id="orbit-hologram" aria-pressed="false">Hologram</button><button id="orbit-close">Return to the story</button><a href="./assets/models/kestrel.glb?texture=4k-original" download="Kestrel-4K.glb">Download the 3D model</a></div>
 <main>
 <div id="story">
 <section id="home" class="chapter hero">
