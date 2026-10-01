@@ -22,6 +22,8 @@ The selected sheets and manifest preserve the app's exact cels, pivots, playback
 
 The 3D canvas renders at device pixel density, capped at 2×, and uses up to 16× anisotropic texture filtering when supported. Resize refreshes the pixel density. Original 4K maps cover the whole model's UV atlas; their soft generated surface detail remains a source-art limitation, even with sharp rendering.
 
+After the fishing loader, a skippable 2.2-second close-up hologram scan introduces the model, inspired by Tripo's asset viewer. The shader is original website code; Tripo's viewer shader is not exported or copied. It restores the authored PBR materials for the story. Reduced motion bypasses the intro, background tabs freeze it, and scrolling dismisses it. Hologram is also available in the closing free-orbit viewer; pausing motion keeps that preview still.
+
 ## Publishing
 
 The public `yjay18/kestrel-showcase` repo holds only this website. `main` holds source; `gh-pages` holds the generated contents of `dist/`, including `.nojekyll`. GitHub Pages publishes `gh-pages` at `/`. Future source updates require rebuilding and updating the deployment branch, then verifying the live model, camera path and playground. The Vite base is relative so project Pages paths work.

@@ -11,6 +11,7 @@ import {TransformNode} from '@babylonjs/core/Meshes/transformNode';
 import {SceneLoader} from '@babylonjs/core/Loading/sceneLoader';
 import {ImageProcessingConfiguration} from '@babylonjs/core/Materials/imageProcessingConfiguration';
 import {tourPose} from './tour.js';
+import {createHologramIntro} from './hologram.js';
 import {CubeTexture} from '@babylonjs/core/Materials/Textures/cubeTexture';
 import '@babylonjs/loaders/glTF/2.0/glTFLoader';
 import '@babylonjs/loaders/glTF/2.0/Extensions/EXT_meshopt_compression';
@@ -80,6 +81,8 @@ export async function createScene({canvas,asset,gsap,ScrollTrigger,isPaused,isRe
   const timeline=ScrollTrigger.create({trigger:'#story',start:'top top',end:'bottom bottom',onUpdate:self=>{destination=self.progress;},invalidateOnRefresh:true});
   destination=timeline.progress;progress=destination;
   const stage=document.querySelector('#stage');
+  const intro=createHologramIntro(scene,imported,camera);
+  await intro.prepare();
   ScrollTrigger.create({trigger:'#desktop',start:'top 55%',end:'top top',onUpdate:self=>{stage.style.opacity=String(1-self.progress);},onLeaveBack:()=>stage.style.opacity='1'});
   function theme() {
     const dark=getTheme()==='dark';scene.clearColor=Color4.FromHexString(dark?'#0b0c0fff':'#eceef2ff');
@@ -99,12 +102,18 @@ export async function createScene({canvas,asset,gsap,ScrollTrigger,isPaused,isRe
     platform.visibility=pose.reveal;ring.visibility=pose.reveal;
   }
   document.querySelector('#orbit-open').addEventListener('click',()=>{
+    intro.finish();
     freeOrbit=true;document.body.classList.add('orbiting');document.querySelector('#orbit-controls').hidden=false;
     const pose=tourPose(1,mobile());camera.alpha=pose.alpha;camera.setTarget(new Vector3(0,mobile()?1.2:1.7,0),false,false,true);camera.radius=mobile()?8.6:6.4;camera.beta=pose.beta;camera.attachControl(canvas,true);canvas.tabIndex=0;stage.style.opacity='1';
     document.querySelector('#orbit-close').focus();
   });
+  document.querySelector('#orbit-hologram').addEventListener('click',event=>{
+    const button=event.currentTarget,show=button.getAttribute('aria-pressed')!=='true';
+    button.setAttribute('aria-pressed',String(show));if(show)intro.start({preview:true});else{intro.finish();theme();}
+  });
   function closeOrbit() {
     if (!freeOrbit) return;
+    intro.finish();theme();document.querySelector('#orbit-hologram').setAttribute('aria-pressed','false');
     freeOrbit=false;camera.detachControl();canvas.tabIndex=-1;document.body.classList.remove('orbiting');document.querySelector('#orbit-controls').hidden=true;
     document.querySelector('#orbit-open').focus();
   }
@@ -119,10 +128,14 @@ export async function createScene({canvas,asset,gsap,ScrollTrigger,isPaused,isRe
     look.x+=(look.targetX-look.x)*follow;look.y+=(look.targetY-look.y)*follow;
     if (document.hidden || (!freeOrbit && stage.style.opacity==='0')) return;
     updateCamera();
+    intro.tick(delta,isPaused()||isReduced());
     // Keep the subject fixed: scrolling alone controls the fly-through.
     scene.render();
   });
-  if(imported.length)scene.executeWhenReady(()=>{updateCamera();scene.render();document.body.classList.add('model-ready');document.dispatchEvent(new Event('kestrel-model-ready'));});
+  if(imported.length)scene.executeWhenReady(()=>{
+    updateCamera();scene.render();document.body.classList.add('model-ready');document.dispatchEvent(new Event('kestrel-model-ready'));
+    if(!isPaused()&&!isReduced()&&scrollY<5)intro.start();
+  });
   window.addEventListener('resize',()=>{resizeRender();ScrollTrigger.refresh();});
   window.addEventListener('pagehide',()=>{timeline.kill();engine.dispose();},{once:true});
 }
