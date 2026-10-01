@@ -16,10 +16,11 @@ body.model-loading{overflow:hidden}#model-loader{position:fixed;inset:0;z-index:
 /* Keep vertical scrolling and browser pinch zoom while horizontal touch drags look around. */
 body:not(.orbiting){touch-action:pan-y pinch-zoom}
 
-#hologram-splash{position:fixed;inset:0;z-index:18;color:#a9e8dc;pointer-events:none;overflow:hidden;background:linear-gradient(90deg,#080e10aa,transparent 55%)}
+#hologram-splash{position:fixed;inset:0;z-index:18;color:#a9e8dc;pointer-events:auto;overflow:hidden;background:linear-gradient(90deg,#080e10aa,transparent 55%)}
 #hologram-skip{position:absolute;right:4vw;top:30px;pointer-events:auto;color:inherit}
 .hologram-caption{position:absolute;left:7vw;bottom:12vh}.hologram-caption .wordmark{font-size:clamp(2rem,5vw,4rem);margin:0 0 12px}.hologram-caption>p:last-child{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.08em}
 .hologram-glyphs{position:absolute;right:5vw;top:15%;font:14px/3 'IBM Plex Mono',monospace;letter-spacing:1em;opacity:.25;animation:glyph-fall 2.2s linear both}
 .hologram-start .navigation,.hologram-start main,.hologram-start footer{visibility:hidden}
 @keyframes glyph-fall{from{transform:translateY(-60px)}to{transform:translateY(100px)}}
 @media(prefers-reduced-motion:reduce){.hologram-glyphs{animation:none}}
+body.model-revealed #stage{pointer-events:auto}body.model-revealed #model-canvas{cursor:grab;touch-action:pan-y pinch-zoom}body.model-dragging #model-canvas{cursor:grabbing}

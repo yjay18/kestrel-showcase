@@ -31,6 +31,7 @@ export function createHologramIntro(scene,meshes,camera) {
   let active=false,preview=false,elapsed=0,backdrop;
   function finish() {
     if(!active)return;
+    for(const type of ['pointerdown','wheel','keydown'])window.removeEventListener(type,finish,true);
     active=false;for(const [mesh,material] of originals)mesh.material=material;
     scene.clearColor=backdrop;panel.hidden=true;document.body.classList.remove('hologram-start');
     content.forEach(element=>element.inert=false);
@@ -43,14 +44,16 @@ export function createHologramIntro(scene,meshes,camera) {
       if(!originals.length)return;
       finish();active=true;preview=!!options.preview;elapsed=0;backdrop=scene.clearColor.clone();scene.clearColor=Color4.FromHexString('#080e10ff');
       for(const [mesh] of originals)mesh.material=shader;
-      if(!preview){panel.hidden=false;document.body.classList.add('hologram-start');content.forEach(element=>element.inert=true);}
+      if(!preview){
+        panel.hidden=false;document.body.classList.add('hologram-start');content.forEach(element=>element.inert=true);
+        for(const type of ['pointerdown','wheel','keydown'])window.addEventListener(type,finish,{capture:true,passive:true});
+      }
     },
     tick(delta,stop){
       if(!active)return;
-      if(!preview&&(stop||scrollY>5)){finish();return;}
+      if(!preview&&scrollY>5){finish();return;}
       if(!stop)elapsed+=delta;
       shader.setFloat('clock',(elapsed%2200)/1000);shader.setVector3('eye',camera.position);
-      if(!preview&&elapsed>=2200)finish();
     },
   };
 }

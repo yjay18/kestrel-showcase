@@ -23,6 +23,8 @@ export async function createScene({canvas,asset,gsap,ScrollTrigger,isPaused,isRe
   const engine = new Engine(canvas,true,{preserveDrawingBuffer:true,stencil:true},false);
   canvas.tabIndex=-1;
   engine.canvasTabIndex=0;
+  // Babylon sets touch-action:none; the story must keep native page gestures.
+  canvas.style.touchAction='pan-y pinch-zoom';
   // Babylon divides canvas dimensions by this value. Use the inverse DPR so
   // Retina displays receive actual detail instead of an enlarged low-res image.
   const resizeRender=()=>engine.setHardwareScalingLevel(1/Math.max(1,Math.min(devicePixelRatio,2)));
@@ -68,9 +70,11 @@ export async function createScene({canvas,asset,gsap,ScrollTrigger,isPaused,isRe
   }
   const mobile=()=>innerWidth<768;
   let progress=0,destination=0,freeOrbit=false;
+  let revealDrag=null;
+  const revealLook={alpha:0,beta:0};
   const look={x:0,y:0,targetX:0,targetY:0};
   window.addEventListener('pointermove',event=>{
-    if(event.isPrimary===false)return;
+    if(event.isPrimary===false||revealDrag)return;
     look.targetX=Math.max(-1,Math.min(1,event.clientX/innerWidth*2-1));
     look.targetY=Math.max(-1,Math.min(1,event.clientY/innerHeight*2-1));
   },{passive:true});
@@ -90,19 +94,40 @@ export async function createScene({canvas,asset,gsap,ScrollTrigger,isPaused,isRe
     // Theme changes the backdrop, not the model's lighting or materials.
   }
   document.addEventListener('kestrel-theme',theme);theme();
+  function endRevealDrag() {
+    const pointer=revealDrag?.id;revealDrag=null;document.body.classList.remove('model-dragging');
+    if(pointer!==undefined&&canvas.hasPointerCapture(pointer))canvas.releasePointerCapture(pointer);
+  }
+  canvas.addEventListener('pointerdown',event=>{
+    if(!document.body.classList.contains('model-revealed')||event.isPrimary===false||event.button!==0)return;
+    revealDrag={id:event.pointerId,x:event.clientX,y:event.clientY,...revealLook};resetLook();
+    canvas.setPointerCapture(event.pointerId);document.body.classList.add('model-dragging');
+  });
+  canvas.addEventListener('pointermove',event=>{
+    if(!revealDrag||event.pointerId!==revealDrag.id)return;
+    revealLook.alpha=Math.max(-.55,Math.min(.55,revealDrag.alpha-(event.clientX-revealDrag.x)*.003));
+    revealLook.beta=Math.max(-.2,Math.min(.2,revealDrag.beta-(event.clientY-revealDrag.y)*.002));
+  });
+  for(const type of ['pointerup','pointercancel','lostpointercapture'])canvas.addEventListener(type,endRevealDrag);
+  window.addEventListener('blur',endRevealDrag);
   function updateCamera() {
     if (freeOrbit) return;
     // One continuous path; feature sections never restart or stop the camera.
     // Motion preferences remove smoothing and idle movement, retaining scroll navigation.
     const pose=tourPose(progress,mobile());
+    const revealed=imported.length>0&&pose.reveal>=.8&&Number(stage.style.opacity||1)>.99;
+    document.body.classList.toggle('model-revealed',revealed);
+    if(!revealed){revealLook.alpha=0;revealLook.beta=0;if(revealDrag)endRevealDrag();}
     // Small live look-around offsets preserve the close framing and delayed reveal.
     const motion=isPaused()||isReduced()?0:1;
-    camera.alpha=pose.alpha+look.x*.085*motion;camera.beta=pose.beta+look.y*.045*motion;camera.radius=pose.radius;
+    camera.alpha=pose.alpha+look.x*.085*motion+revealLook.alpha;camera.beta=pose.beta+look.y*.045*motion+revealLook.beta;camera.radius=pose.radius;
     camera.setTarget(Vector3.FromArray(pose.target),false,false,true);
     platform.visibility=pose.reveal;ring.visibility=pose.reveal;
   }
   document.querySelector('#orbit-open').addEventListener('click',()=>{
     intro.finish();
+    endRevealDrag();document.body.classList.remove('model-revealed');
+    canvas.style.touchAction='none';
     freeOrbit=true;document.body.classList.add('orbiting');document.querySelector('#orbit-controls').hidden=false;
     const pose=tourPose(1,mobile());camera.alpha=pose.alpha;camera.setTarget(new Vector3(0,mobile()?1.2:1.7,0),false,false,true);camera.radius=mobile()?8.6:6.4;camera.beta=pose.beta;camera.attachControl(canvas,true);canvas.tabIndex=0;stage.style.opacity='1';
     document.querySelector('#orbit-close').focus();
@@ -115,6 +140,7 @@ export async function createScene({canvas,asset,gsap,ScrollTrigger,isPaused,isRe
     if (!freeOrbit) return;
     intro.finish();theme();document.querySelector('#orbit-hologram').setAttribute('aria-pressed','false');
     freeOrbit=false;camera.detachControl();canvas.tabIndex=-1;document.body.classList.remove('orbiting');document.querySelector('#orbit-controls').hidden=true;
+    canvas.style.touchAction='pan-y pinch-zoom';
     document.querySelector('#orbit-open').focus();
   }
   document.querySelector('#orbit-close').addEventListener('click',closeOrbit);
@@ -134,7 +160,7 @@ export async function createScene({canvas,asset,gsap,ScrollTrigger,isPaused,isRe
   });
   if(imported.length)scene.executeWhenReady(()=>{
     updateCamera();scene.render();document.body.classList.add('model-ready');document.dispatchEvent(new Event('kestrel-model-ready'));
-    if(!isPaused()&&!isReduced()&&scrollY<5)intro.start();
+    if(scrollY<5)intro.start();
   });
   window.addEventListener('resize',()=>{resizeRender();ScrollTrigger.refresh();});
   window.addEventListener('pagehide',()=>{timeline.kill();engine.dispose();},{once:true});
