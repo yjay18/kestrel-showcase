@@ -24,6 +24,8 @@ The 3D canvas renders at device pixel density, capped at 2Ã—, and uses up to 16Ã
 
 After the fishing loader, a close-up hologram scan introduces the model, inspired by Tripo's asset viewer. It stays until the first click/touch, wheel/scroll or keypress; pointer movement alone does not dismiss it. The shader is original website code; Tripo's viewer shader is not exported or copied. It restores the authored PBR materials for the story. Reduced motion holds the scan still, background tabs freeze it, and scrolling dismisses it. Hologram is also available in the closing free-orbit viewer; pausing motion keeps that preview still.
 
+Interface controls use inline SVG paths in the current text colour. Do not use emoji or font glyphs as icons; preserve accessible button/link names when changing an icon.
+
 ## Publishing
 
 The public `yjay18/kestrel-showcase` repo holds only this website. `main` holds source; `gh-pages` holds the generated contents of `dist/`, including `.nojekyll`. GitHub Pages publishes `gh-pages` at `/`. Future source updates require rebuilding and updating the deployment branch, then verifying the live model, camera path and playground. The Vite base is relative so project Pages paths work.

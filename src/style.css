@@ -24,3 +24,7 @@ body:not(.orbiting){touch-action:pan-y pinch-zoom}
 @keyframes glyph-fall{from{transform:translateY(-60px)}to{transform:translateY(100px)}}
 @media(prefers-reduced-motion:reduce){.hologram-glyphs{animation:none}}
 body.model-revealed #stage{pointer-events:auto}body.model-revealed #model-canvas{cursor:grab;touch-action:pan-y pinch-zoom}body.model-dragging #model-canvas{cursor:grabbing}
+
+/* Interface icons are vector paths; never use emoji or font glyphs for controls. */
+.ui-icon{width:18px;height:18px;flex:none;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;vertical-align:middle}
+.text-button{align-items:center}#task-form button{display:flex;align-items:center;justify-content:center}footer a[download]{display:inline-flex;align-items:center;gap:8px}
